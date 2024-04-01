@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react"
+import Hero from "./components/Hero/Hero"
+import Loader from "./components/Loader/Loader"
 
 const App = () => {
+  const [showLoader, setShowLoader] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoader(false)
+    }, 3000)
+  }, [])
+
+  useEffect(() => {
+    if (showLoader) return
+    document.querySelector("#loader").classList.remove("opacity-100")
+    document.querySelector("#loader").classList.add("opacity-0")
+  }, [showLoader])
+
   return (
-    <div className='bg-black'>Hello World</div>
+    <>
+      <div className="px-40 pt-12 selection:bg-yellow-300">
+        <Hero />
+      </div>
+      <Loader />
+    </>
   )
 }
 
