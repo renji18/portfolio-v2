@@ -15,9 +15,9 @@ const Hero = () => {
           building the <span className="font-bold">Web</span> & shaping{" "}
           <span className="font-bold">Mobile</span> realms
         </p>
-        <p className="text-[1.6rem] leading-snug px-48">
+        <p className="text-[1.6rem] leading-snug px-56 tracking-wide">
           From concept to execution,{" "}
-          <button className="bg-rose-600 hover:bg-white border-2 border-rose-600 transition-all ease-linear duration-300 italic font-bold tracking-wide text-2xl px-4 py-2 animate-bounce-slow rounded-md text-white hover:text-rose-600">
+          <button className="bg-rose-600 hover:bg-white border-2 border-rose-600 transition-all ease-linear duration-300 italic font-bold tracking-wider text-2xl px-4 py-2 animate-bounce-slow rounded-md text-white hover:text-rose-600">
             I'm your go-to
           </button>{" "}
           for turning ideas into pixel-perfect websites and intuitive mobile
