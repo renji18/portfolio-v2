@@ -1,16 +1,16 @@
 .cssload-tetrominos {
 	position: absolute;
 	left: 50%;
-	transform: translate(-109px, -94px);
-		-o-transform: translate(-109px, -94px);
-		-ms-transform: translate(-109px, -94px);
-		-webkit-transform: translate(-109px, -94px);
-		-moz-transform: translate(-109px, -94px);
+	transform: translate(-101px, -86px);
+		-o-transform: translate(-101px, -86px);
+		-ms-transform: translate(-101px, -86px);
+		-webkit-transform: translate(-101px, -86px);
+		-moz-transform: translate(-101px, -86px);
 }
 
 .cssload-tetromino {
-	width: 94px;
-	height: 109px;
+	width: 86px;
+	height: 101px;
 	position: absolute;
 	transition: all ease 0.35s;
 		-o-transition: all ease 0.35s;
@@ -66,10 +66,10 @@
 		transform: translate(0, 0);
 	}
 	50% {
-		transform: translate(47px, -26px);
+		transform: translate(43px, -24px);
 	}
 	60%, 100% {
-		transform: translate(94px, 0);
+		transform: translate(86px, 0);
 	}
 }
 
@@ -78,10 +78,10 @@
 		-o-transform: translate(0, 0);
 	}
 	50% {
-		-o-transform: translate(47px, -26px);
+		-o-transform: translate(43px, -24px);
 	}
 	60%, 100% {
-		-o-transform: translate(94px, 0);
+		-o-transform: translate(86px, 0);
 	}
 }
 
@@ -90,10 +90,10 @@
 		-ms-transform: translate(0, 0);
 	}
 	50% {
-		-ms-transform: translate(47px, -26px);
+		-ms-transform: translate(43px, -24px);
 	}
 	60%, 100% {
-		-ms-transform: translate(94px, 0);
+		-ms-transform: translate(86px, 0);
 	}
 }
 
@@ -102,10 +102,10 @@
 		-webkit-transform: translate(0, 0);
 	}
 	50% {
-		-webkit-transform: translate(47px, -26px);
+		-webkit-transform: translate(43px, -24px);
 	}
 	60%, 100% {
-		-webkit-transform: translate(94px, 0);
+		-webkit-transform: translate(86px, 0);
 	}
 }
 
@@ -114,121 +114,121 @@
 		-moz-transform: translate(0, 0);
 	}
 	50% {
-		-moz-transform: translate(47px, -26px);
+		-moz-transform: translate(43px, -24px);
 	}
 	60%, 100% {
-		-moz-transform: translate(94px, 0);
+		-moz-transform: translate(86px, 0);
 	}
 }
 
 @keyframes cssload-tetromino2 {
 	0%, 20% {
-		transform: translate(94px, 0px);
+		transform: translate(86px, 0px);
 	}
 	40%, 100% {
-		transform: translate(140px, 26px);
+		transform: translate(130px, 24px);
 	}
 }
 
 @-o-keyframes cssload-tetromino2 {
 	0%, 20% {
-		-o-transform: translate(94px, 0px);
+		-o-transform: translate(86px, 0px);
 	}
 	40%, 100% {
-		-o-transform: translate(140px, 26px);
+		-o-transform: translate(130px, 24px);
 	}
 }
 
 @-ms-keyframes cssload-tetromino2 {
 	0%, 20% {
-		-ms-transform: translate(94px, 0px);
+		-ms-transform: translate(86px, 0px);
 	}
 	40%, 100% {
-		-ms-transform: translate(140px, 26px);
+		-ms-transform: translate(130px, 24px);
 	}
 }
 
 @-webkit-keyframes cssload-tetromino2 {
 	0%, 20% {
-		-webkit-transform: translate(94px, 0px);
+		-webkit-transform: translate(86px, 0px);
 	}
 	40%, 100% {
-		-webkit-transform: translate(140px, 26px);
+		-webkit-transform: translate(130px, 24px);
 	}
 }
 
 @-moz-keyframes cssload-tetromino2 {
 	0%, 20% {
-		-moz-transform: translate(94px, 0px);
+		-moz-transform: translate(86px, 0px);
 	}
 	40%, 100% {
-		-moz-transform: translate(140px, 26px);
+		-moz-transform: translate(130px, 24px);
 	}
 }
 
 @keyframes cssload-tetromino3 {
 	0% {
-		transform: translate(140px, 26px);
+		transform: translate(130px, 24px);
 	}
 	20%, 60% {
-		transform: translate(94px, 53px);
+		transform: translate(86px, 49px);
 	}
 	90%, 100% {
-		transform: translate(47px, 26px);
+		transform: translate(43px, 24px);
 	}
 }
 
 @-o-keyframes cssload-tetromino3 {
 	0% {
-		-o-transform: translate(140px, 26px);
+		-o-transform: translate(130px, 24px);
 	}
 	20%, 60% {
-		-o-transform: translate(94px, 53px);
+		-o-transform: translate(86px, 49px);
 	}
 	90%, 100% {
-		-o-transform: translate(47px, 26px);
+		-o-transform: translate(43px, 24px);
 	}
 }
 
 @-ms-keyframes cssload-tetromino3 {
 	0% {
-		-ms-transform: translate(140px, 26px);
+		-ms-transform: translate(130px, 24px);
 	}
 	20%, 60% {
-		-ms-transform: translate(94px, 53px);
+		-ms-transform: translate(86px, 49px);
 	}
 	90%, 100% {
-		-ms-transform: translate(47px, 26px);
+		-ms-transform: translate(43px, 24px);
 	}
 }
 
 @-webkit-keyframes cssload-tetromino3 {
 	0% {
-		-webkit-transform: translate(140px, 26px);
+		-webkit-transform: translate(130px, 24px);
 	}
 	20%, 60% {
-		-webkit-transform: translate(94px, 53px);
+		-webkit-transform: translate(86px, 49px);
 	}
 	90%, 100% {
-		-webkit-transform: translate(47px, 26px);
+		-webkit-transform: translate(43px, 24px);
 	}
 }
 
 @-moz-keyframes cssload-tetromino3 {
 	0% {
-		-moz-transform: translate(140px, 26px);
+		-moz-transform: translate(130px, 24px);
 	}
 	20%, 60% {
-		-moz-transform: translate(94px, 53px);
+		-moz-transform: translate(86px, 49px);
 	}
 	90%, 100% {
-		-moz-transform: translate(47px, 26px);
+		-moz-transform: translate(43px, 24px);
 	}
 }
 
 @keyframes cssload-tetromino4 {
 	0%, 60% {
-		transform: translate(47px, 26px);
+		transform: translate(43px, 24px);
 	}
 	90%, 100% {
 		transform: translate(0, 0);
@@ -237,7 +237,7 @@
 
 @-o-keyframes cssload-tetromino4 {
 	0%, 60% {
-		-o-transform: translate(47px, 26px);
+		-o-transform: translate(43px, 24px);
 	}
 	90%, 100% {
 		-o-transform: translate(0, 0);
@@ -246,7 +246,7 @@
 
 @-ms-keyframes cssload-tetromino4 {
 	0%, 60% {
-		-ms-transform: translate(47px, 26px);
+		-ms-transform: translate(43px, 24px);
 	}
 	90%, 100% {
 		-ms-transform: translate(0, 0);
@@ -255,7 +255,7 @@
 
 @-webkit-keyframes cssload-tetromino4 {
 	0%, 60% {
-		-webkit-transform: translate(47px, 26px);
+		-webkit-transform: translate(43px, 24px);
 	}
 	90%, 100% {
 		-webkit-transform: translate(0, 0);
@@ -264,7 +264,7 @@
 
 @-moz-keyframes cssload-tetromino4 {
 	0%, 60% {
-		-moz-transform: translate(47px, 26px);
+		-moz-transform: translate(43px, 24px);
 	}
 	90%, 100% {
 		-moz-transform: translate(0, 0);

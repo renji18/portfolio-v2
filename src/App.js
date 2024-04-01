@@ -15,11 +15,16 @@ const App = () => {
     if (showLoader) return
     document.querySelector("#loader").classList.remove("opacity-100")
     document.querySelector("#loader").classList.add("opacity-0")
+    document.querySelector("#main").classList.remove("opacity-0")
+    document.querySelector("#main").classList.add("z-10")
   }, [showLoader])
 
   return (
     <>
-      <div className="px-40 pt-12 selection:bg-yellow-300">
+      <div
+        id="main"
+        className="px-40 transition-all delay-150 opacity-0 ease-linear duration-500 relative pt-12 selection:bg-yellow-300"
+      >
         <Hero />
       </div>
       <Loader />
