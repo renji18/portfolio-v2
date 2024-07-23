@@ -3,33 +3,20 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      animation: {
-        "bounce-slow": "bounce-slow 1.2s ease-out infinite",
-      },
-      keyframes: {
-        "bounce-slow": {
-          "0%, 100%": {
-            transform: "translateY(-12%)",
-            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
-          },
-          "50%": {
-            transform: "translateY(0)",
-            "animation-timing-function": "cubic-bezier(0, 0, 0.2, 1)",
-          },
-        },
-      },
-      fontFamily: {
-        bitter: ["Bitter", "serif"],
-        sriracha: ["Sriracha", "cursive"],
-        poppins: ["Poppins", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
-      },
       colors: {
-        blueish: "hsla(206, 84%, 86%, 1)",
-        whitish: "hsla(36, 31%, 90%, 1)",
-        beigeish: "hsla(22, 62%, 76%, 1)",
-        lightGreenish: "hsla(171,15%,35%,1)",
-        darkGreenish: "#025a4e",
+        darkBlack: "#303030",
+        lightBlack: "#3d3d3d",
+        lightWhite: "#f6f6f6",
+      },
+      boxShadow: {
+        darkShadow:
+          "0 2px 4px 0 rgba(136, 144, 195, 0.2), 0 5px 15px 0 rgba(37, 44, 97, 0.15)",
+        lighShadow: "0px 1px 20px rgba(0, 0, 0, 0.07)",
+      },
+      screens: {
+        md: "501px",
+        lg: "901px",
+        xl: "1201px",
       },
     },
   },
