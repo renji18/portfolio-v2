@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (navOpen) {
-      setTimeout(() => setIsTransitioning(true), 100)
+      setTimeout(() => setIsTransitioning(true), 150)
     } else {
       setIsTransitioning(false)
     }
@@ -21,18 +21,43 @@ const Navbar = () => {
     { title: "Blog", link: "blog" },
   ]
 
+  useEffect(() => {
+    const disableScroll = (e) => {
+      e.preventDefault()
+    }
+
+    if (navOpen) {
+      window.addEventListener("scroll", disableScroll, { passive: false })
+      window.addEventListener("wheel", disableScroll, { passive: false })
+      window.addEventListener("touchmove", disableScroll, { passive: false })
+    } else {
+      window.removeEventListener("scroll", disableScroll, { passive: false })
+      window.removeEventListener("wheel", disableScroll, { passive: false })
+      window.removeEventListener("touchmove", disableScroll, { passive: false })
+    }
+
+    // Cleanup function to reset event listeners when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", disableScroll, { passive: false })
+      window.removeEventListener("wheel", disableScroll, { passive: false })
+      window.removeEventListener("touchmove", disableScroll, { passive: false })
+    }
+  }, [navOpen])
+
   return (
     <div
-      className={`opacity-95 ${
-        navOpen ? "fixed left-0 bottom-0 right-0" : "sticky shadow-lighShadow"
-      } top-0 bg-white z-[5050] xl:flex justify-center py-[10px] px-[15px] transition-all duration-100 ease-in`}
+      className={`${
+        navOpen
+          ? "fixed top-0 overflow-hidden left-0 bottom-0 right-0"
+          : "opacity-95 sticky shadow-lighShadow"
+      } top-0 bg-white z-[5050] xl:flex justify-center py-[10px] px-[15px] transition-all duration-150 ease-linear`}
     >
       <div className="xl:w-[1170px]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
-            <img src={logo} alt="" className="h-10 w-10"/>
+          <div className="flex items-center">
+            <img src={logo} alt="" className="h-7 w-7 lg:h-9 lg:w-9" />
             <p className="text-lightBlack tracking-widest font-medium text-[15px]">
-              AADARSH JHA
+              ADARSH JHA
             </p>
           </div>
           <div

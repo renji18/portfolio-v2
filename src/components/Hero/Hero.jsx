@@ -10,8 +10,8 @@ const Hero = () => {
           Innovating with code, delivering success
         </p>
         <p className="text-lightBlack pb-1 leading-[1.6] text-center lg:text-start px-5 lg:px-0 lg:w-[80%]">
-          Hello, my name is Aadarsh, a passionate developer committed to crafting
-          top-notch projects.
+          Hello, my name is Aadarsh, a passionate developer committed to
+          crafting top-notch projects.
         </p>
         <div className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-10 md:mt-6 md:gap-5 text-[14px] leading-[1.2] font-[700]">
           <button className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5">
