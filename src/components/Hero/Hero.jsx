@@ -17,7 +17,7 @@ const Hero = () => {
           <button className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5">
             Arrange a Call
           </button>
-          <button className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-75 ease-in myTransition hover:-translate-y-0.5">
+          <button className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
             <span>Send an Email</span>
             <span>
               <IoIosArrowRoundForward size={25} />
