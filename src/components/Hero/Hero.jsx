@@ -34,7 +34,7 @@ const Hero = ({ logos }) => {
           onMouseLeave={() => setIsHovering(false)}
           className="h-[270px] mt-10 lg:mt-0 w-[270px] xl:h-[370px] xl:w-[370px] rounded-full p-[4px] flex items-center justify-center border-[5px] border-darkBlack shadow-lighShadow overflow-hidden"
         >
-          <div className="relative rounded-full h-full w-full border-[2px] border-darkBlack">
+          <div className="relative flex justify-center items-center rounded-full h-full w-full border-[2px] border-darkBlack">
             <img
               className={`h-full w-full absolute shadow-darkShadow ${
                 hovering ? "opacity-0" : "opacity-100"
