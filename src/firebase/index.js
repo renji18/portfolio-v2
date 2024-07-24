@@ -69,3 +69,20 @@ export async function uploadCompanyLogos(currentUrls, files) {
     return errorHandler(error)
   }
 }
+
+// upload projects
+export async function uploadProjectData(currentData, data) {
+  try {
+    const url = await handleUploadImage(
+      data?.image,
+      `project_covers/${Date?.now()}-${data?.image?.name}`
+    )
+
+    await updateDoc(portfolioRef, {
+      projects: [...currentData, { ...data, image: url }],
+    })
+    return "Company Logos updated successfully"
+  } catch (error) {
+    return errorHandler(error)
+  }
+}

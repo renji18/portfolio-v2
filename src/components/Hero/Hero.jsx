@@ -38,7 +38,7 @@ const Hero = ({ logos }) => {
             <img
               className={`h-full w-full absolute shadow-darkShadow ${
                 hovering ? "opacity-0" : "opacity-100"
-              } transition-all duration-200 ease-linear z-10`}
+              } transition-all duration-300 ease-linear z-10`}
               src={me}
               alt=""
             />
