@@ -21,6 +21,13 @@ const Navbar = () => {
     { title: "Blog", link: "blog" },
   ]
 
+  const handleNavigate = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   useEffect(() => {
     const disableScroll = (e) => {
       e.preventDefault()
@@ -78,7 +85,10 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center font-[700] text-[14px] gap-12">
             {navLinks?.map((nl) => (
               <div key={nl?.link}>
-                <p className="myTransition hover:-translate-y-0.5 cursor-pointer">
+                <p
+                  className="myTransition hover:-translate-y-0.5 cursor-pointer"
+                  onClick={() => handleNavigate(nl?.link)}
+                >
                   {nl?.title}
                 </p>
               </div>
@@ -96,7 +106,13 @@ const Navbar = () => {
           >
             {navLinks?.map((nl) => (
               <div key={nl?.link}>
-                <p className="myTransition hover:-translate-y-0.5">
+                <p
+                  className="myTransition hover:-translate-y-0.5"
+                  onClick={() => {
+                    handleNavigate(nl?.link)
+                    setNavOpen(false)
+                  }}
+                >
                   {nl?.title}
                 </p>
               </div>
