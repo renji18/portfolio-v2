@@ -1,16 +1,32 @@
-import React from "react"
-import Navbar from "./components/Navbar/Navbar"
-import Hero from "./components/Hero/Hero"
-import Footer from "./components/Footer/Footer"
+import React, { useEffect, useState } from "react"
+import { handleGetPortfolioData } from "./firebase"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Admin from "./pages/Admin"
 
 const App = () => {
-  return (
-    <div className="text-darkBlack">
-      <Navbar />
-      <Hero />
+  const [portfolioData, setPortfolioData] = useState(null)
 
-      <Footer />
-    </div>
+  // use effect to get portfolio data
+  useEffect(() => {
+    async function fetchData() {
+      const response = await handleGetPortfolioData()
+      setPortfolioData(response)
+    }
+    fetchData()
+  }, [])
+
+  console.log(portfolioData)
+
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home data={portfolioData} />} />
+          <Route path="/admin" element={<Admin data={portfolioData} />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
