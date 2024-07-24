@@ -7,6 +7,7 @@ module.exports = {
         darkBlack: "#303030",
         lightBlack: "#3d3d3d",
         lightWhite: "#f6f6f6",
+        myBlue: "#0fcfc4",
       },
       boxShadow: {
         darkShadow:

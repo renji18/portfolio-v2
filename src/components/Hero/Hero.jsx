@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import me from "../../assets/myself.png"
+import hoveredMe from "../../assets/hoveredMe.png"
 import { IoIosArrowRoundForward } from "react-icons/io"
 
 const Hero = ({ logos }) => {
+  const [hovering, setIsHovering] = useState(false)
+
   return (
     <>
       <div className="flex flex-col lg:flex-row items-center justify-evenly lg:justify-around pb-[70px] lg:py-[70px] xl:justify-evenly">
@@ -26,12 +29,25 @@ const Hero = ({ logos }) => {
             </button>
           </div>
         </div>
-        <div className="h-[300px] mt-10 lg:mt-0 w-[300px] xl:h-[400px] xl:w-[400px] rounded-full p-[4px] flex items-center justify-center border-[5px] border-darkBlack shadow-lighShadow">
-          <img
-            className="h-full w-full shadow-darkShadow rounded-full border-[2px] border-darkBlack"
-            src={me}
-            alt=""
-          />
+        <div
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          className="h-[270px] mt-10 lg:mt-0 w-[270px] xl:h-[370px] xl:w-[370px] rounded-full p-[4px] flex items-center justify-center border-[5px] border-darkBlack shadow-lighShadow overflow-hidden"
+        >
+          <div className="relative rounded-full h-full w-full border-[2px] border-darkBlack">
+            <img
+              className={`h-full w-full absolute shadow-darkShadow ${
+                hovering ? "opacity-0" : "opacity-100"
+              } transition-all duration-200 ease-linear z-10`}
+              src={me}
+              alt=""
+            />
+            <img
+              className={`h-full w-full absolute shadow-darkShadow z-0`}
+              src={hoveredMe}
+              alt=""
+            />
+          </div>
         </div>
       </div>
       <div className="flex items-center justify-center flex-wrap gap-8 md:gap-14 pb-[70px]">
@@ -41,7 +57,9 @@ const Hero = ({ logos }) => {
               <img
                 src={l}
                 alt="company_logo"
-                className="max-h-[40px] lg:max-h-[50px] object-contain grayscale hover:grayscale-0 scale-110 transition-all duration-100 ease-linear"
+                className={`max-h-[40px] lg:max-h-[50px] object-contain grayscale ${
+                  indx !== 0 ? "opacity-[0.6]" : ""
+                } hover:opacity-100 hover:grayscale-0 scale-110 transition-all duration-100 ease-linear`}
               />
             </span>
           ))}
