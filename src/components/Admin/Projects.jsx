@@ -62,7 +62,11 @@ const Projects = ({ projects }) => {
         }
         value={data?.skills}
       />
-      <button onClick={handleUploadProjectData}>Upload Project</button>
+      <button
+      // onClick={handleUploadProjectData}
+      >
+        Upload Project
+      </button>
     </div>
   )
 }
