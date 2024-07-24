@@ -1,9 +1,10 @@
 import React from "react"
 import { IoIosArrowRoundForward } from "react-icons/io"
 import { HiOutlineMail } from "react-icons/hi"
-import { FaXTwitter } from "react-icons/fa6"
+// import { FaXTwitter } from "react-icons/fa6"
 import { SlSocialLinkedin } from "react-icons/sl"
 import { FaGithub } from "react-icons/fa"
+import { CgFileDocument } from "react-icons/cg"
 
 const Footer = () => {
   return (
@@ -35,11 +36,20 @@ const Footer = () => {
           <p className="md:translate-y-3 leading-[1.6] mb-[20px]">
             &copy; 2024 Developed by Aadarsh Jha
           </p>
-          <div className="flex items-center gap-5">
-            <SlSocialLinkedin size={23} />
-            <FaGithub size={23} />
-            <HiOutlineMail size={26} />
-            <FaXTwitter size={23} />
+          <div className="flex items-center gap-4">
+            <span title="LinkedIn">
+              <SlSocialLinkedin size={23} />
+            </span>
+            <span title="Github">
+              <FaGithub size={23} />
+            </span>
+            <span title="Email">
+              <HiOutlineMail size={26} />
+            </span>
+            {/* < title=""FaXTwitter size={23} /> */}
+            <span title="Resume">
+              <CgFileDocument size={24} />
+            </span>
           </div>
         </div>
       </div>
