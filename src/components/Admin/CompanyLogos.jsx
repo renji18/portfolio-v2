@@ -19,10 +19,7 @@ const CompanyLogos = ({ logos }) => {
   return (
     <div className="border-4 max-w-fit p-5">
       <input type="file" multiple onChange={(e) => setFiles(e.target.files)} />
-      <button
-        // onClick={handleUploadCompanyLogos}
-        className="border-2 p-2"
-      >
+      <button onClick={handleUploadCompanyLogos} className="border-2 p-2">
         Submit
       </button>
     </div>

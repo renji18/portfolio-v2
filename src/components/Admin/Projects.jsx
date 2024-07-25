@@ -50,21 +50,21 @@ const Projects = ({ projects }) => {
         onChange={(e) => setData((prev) => ({ ...prev, name: e.target.value }))}
         value={data?.name}
       />
-      <input
+      <textarea
         type="text"
         placeholder="website desc, in case of multiple, separate by comma without space"
         className="border"
         onChange={(e) => setData((prev) => ({ ...prev, desc: e.target.value }))}
         value={data?.desc}
       />
-      <input
+      <textarea
         type="text"
         placeholder="website repos, in case of multiple, separate by comma without space"
         className="border"
         onChange={(e) => setData((prev) => ({ ...prev, repo: e.target.value }))}
         value={data?.repo}
       />
-      <input
+      <textarea
         type="text"
         placeholder="skills, enter as many, separated by comma, without space"
         onChange={(e) =>
@@ -72,11 +72,7 @@ const Projects = ({ projects }) => {
         }
         value={data?.skills}
       />
-      <button
-      // onClick={handleUploadProjectData}
-      >
-        Upload Project
-      </button>
+      <button onClick={handleUploadProjectData}>Upload Project</button>
     </div>
   )
 }

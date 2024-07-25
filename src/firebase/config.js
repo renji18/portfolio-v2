@@ -4,13 +4,13 @@ import { getStorage } from "firebase/storage"
 import { getAnalytics, logEvent } from "firebase/analytics"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAfJ7e2WgofnB7xctEZ8Nfn94nyX2TAPuQ",
-  authDomain: "aadarsh-portfolio-v2.firebaseapp.com",
-  projectId: "aadarsh-portfolio-v2",
-  storageBucket: "aadarsh-portfolio-v2.appspot.com",
-  messagingSenderId: "452182264642",
-  appId: "1:452182264642:web:23772b8ac4c04e655bd6db",
-  measurementId: "G-ZS52J88ZDD",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
 }
 
 // firebase application instances

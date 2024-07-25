@@ -5,7 +5,11 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import { errorHandler } from "./errors"
 
 // the portfolio reference
-const portfolioRef = doc(firestore, "portfolioData", "renji_riverstone")
+const portfolioRef = doc(
+  firestore,
+  process.env.REACT_APP_COLLECTION_NAME,
+  process.env.REACT_APP_DOCUMENT_NAME
+)
 
 // get portfolio data
 export async function handleGetPortfolioData() {
@@ -27,7 +31,7 @@ async function handleUploadImage(file, location) {
       maxIteration: 10,
       fileType: "image/*",
     })
-    const imgRef = ref(storage, location)
+    const imgRef = ref(storage, `portfolio_v2/${location}`)
     const upload = await uploadBytes(imgRef, compressedImage)
     const res = await getDownloadURL(upload.ref)
     return res
