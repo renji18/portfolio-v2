@@ -18,12 +18,22 @@ const Projects = ({ projects }) => {
 
   return (
     <div className="border-4 max-w-[50vw] p-5 flex flex-col gap-2">
+      <p>Big</p>
       <input
         type="file"
         placeholder="cover image"
         className="border"
         onChange={(e) =>
           setData((prev) => ({ ...prev, image: e.target.files[0] }))
+        }
+      />
+      <p>Small</p>
+      <input
+        type="file"
+        placeholder="cover image small"
+        className="border"
+        onChange={(e) =>
+          setData((prev) => ({ ...prev, imageSmall: e.target.files[0] }))
         }
       />
       <input

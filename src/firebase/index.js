@@ -73,15 +73,20 @@ export async function uploadCompanyLogos(currentUrls, files) {
 // upload projects
 export async function uploadProjectData(currentData, data) {
   try {
-    const url = await handleUploadImage(
+    const url1 = await handleUploadImage(
       data?.image,
       `project_covers/${Date?.now()}-${data?.image?.name}`
     )
 
+    const url2 = await handleUploadImage(
+      data?.imageSmall,
+      `project_covers/${Date?.now()}-${data?.imageSmall?.name}`
+    )
+
     await updateDoc(portfolioRef, {
-      projects: [...currentData, { ...data, image: url }],
+      projects: [...currentData, { ...data, image: url1, imageSmall: url2 }],
     })
-    return "Company Logos updated successfully"
+    return "Project updated successfully"
   } catch (error) {
     return errorHandler(error)
   }
