@@ -8,7 +8,10 @@ const Home = ({ data }) => {
   return (
     <div className="text-darkBlack">
       <Navbar />
-      <Hero logos={data && data?.company_logos} />
+      <Hero
+        logos={data && data?.company_logos}
+        email={data && data?.socials?.email}
+      />
       <Projects projects={data && data?.projects} />
 
       <Footer socials={data && data?.socials} />

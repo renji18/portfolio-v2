@@ -23,7 +23,13 @@ const Footer = ({ socials }) => {
               Arrange a Call
             </button>
             <button className="flex items-center justify-center text-lightWhite my-[14px] w-full md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
-              <span>Send an Email</span>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={`mailto:${socials?.email}`}
+              >
+                Send an Email
+              </a>
               <span>
                 <IoIosArrowRoundForward size={25} />
               </span>

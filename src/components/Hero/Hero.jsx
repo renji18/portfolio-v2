@@ -3,7 +3,7 @@ import me from "../../assets/myself.png"
 import hoveredMe from "../../assets/hoveredMe.png"
 import { IoIosArrowRoundForward } from "react-icons/io"
 
-const Hero = ({ logos }) => {
+const Hero = ({ logos, email }) => {
   const [hovering, setIsHovering] = useState(false)
 
   return (
@@ -22,7 +22,9 @@ const Hero = ({ logos }) => {
               Arrange a Call
             </button>
             <button className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
-              <span>Send an Email</span>
+              <a target="_blank" rel="noreferrer" href={`mailto:${email}`}>
+                Send an Email
+              </a>
               <span>
                 <IoIosArrowRoundForward size={25} />
               </span>
