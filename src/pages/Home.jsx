@@ -11,7 +11,7 @@ const Home = ({ data }) => {
       <Hero logos={data && data?.company_logos} />
       <Projects projects={data && data?.projects} />
 
-      <Footer />
+      <Footer socials={data && data?.socials} />
     </div>
   )
 }

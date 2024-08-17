@@ -6,7 +6,7 @@ import { SlSocialLinkedin } from "react-icons/sl"
 import { FaGithub } from "react-icons/fa"
 import { CgFileDocument } from "react-icons/cg"
 
-const Footer = () => {
+const Footer = ({ socials }) => {
   return (
     <div className="bg-lightBlack text-white">
       <div className="md:flex justify-center border-b-[0.5px] border-b-lightWhite">
@@ -37,19 +37,39 @@ const Footer = () => {
             &copy; 2024 Developed by Aadarsh Jha
           </p>
           <div className="flex items-center gap-4">
-            <span title="LinkedIn">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={socials?.linkedin || "#"}
+              title="LinkedIn"
+            >
               <SlSocialLinkedin size={23} />
-            </span>
-            <span title="Github">
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={socials?.github || "#"}
+              title="Github"
+            >
               <FaGithub size={23} />
-            </span>
-            <span title="Email">
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`mailto:${socials?.email}` || "#"}
+              title="Email"
+            >
               <HiOutlineMail size={26} />
-            </span>
+            </a>
             {/* < title=""FaXTwitter size={23} /> */}
-            <span title="Resume">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={socials?.resume || "#"}
+              title="Resume"
+            >
               <CgFileDocument size={24} />
-            </span>
+            </a>
           </div>
         </div>
       </div>
