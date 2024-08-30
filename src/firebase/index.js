@@ -95,3 +95,12 @@ export async function uploadProjectData(currentData, data) {
     return errorHandler(error)
   }
 }
+
+// uplaod tech stack
+
+export async function updateTechStack(data) {
+  await updateDoc(portfolioRef, {
+    tech: data
+  })
+  return "Project updated successfully"
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import CompanyLogos from "../components/Admin/CompanyLogos"
 import Projects from "../components/Admin/Projects"
 import { useNavigate } from "react-router-dom"
+import Skills from "../components/Admin/Skills"
 
 const Admin = ({ data }) => {
   const [authenticated, setAuthenticated] = useState(false)
@@ -26,10 +27,11 @@ const Admin = ({ data }) => {
           <button onClick={auth}>Authenticate</button>
         </div>
       ) : (
-        <>
+        <div className="flex flex-wrap gap-5 p-2">
           <CompanyLogos logos={data && data?.company_logos} />
           <Projects projects={data && data?.projects} />
-        </>
+          <Skills tech={data && data?.tech} />
+        </div>
       )}
     </div>
   )

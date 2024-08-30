@@ -17,7 +17,7 @@ const Projects = ({ projects }) => {
   }
 
   return (
-    <div className="border-4 max-w-[50vw] p-5 flex flex-col gap-2">
+    <div className="border-4 w-[30vw] p-5 flex flex-col gap-2">
       <p>Big</p>
       <input
         type="file"

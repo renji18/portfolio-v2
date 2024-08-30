@@ -13,7 +13,7 @@ const Projects = ({ projects }) => {
         Featured Work
       </p>
       <p className="text-[16px] text-center md:w-[480px] leading-[1.7] text-lightBlack px-[15px]">
-        Turning ideas into digital reality since 2020, delivering{" "}
+        Turning ideas into digital reality since 2021, delivering{" "}
         <span className="font-[700]">result-driven</span> success through
         innovative solutions.
       </p>
