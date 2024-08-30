@@ -68,6 +68,7 @@ const Footer = ({ socials }) => {
           <div className="flex items-center gap-4">
             {icons?.map((i, idx) => (
               <a
+                key={idx}
                 target="_blank"
                 rel="noreferrer"
                 href={i?.link || "#"}

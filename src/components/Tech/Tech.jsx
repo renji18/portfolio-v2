@@ -25,9 +25,11 @@ const Tech = ({ tech }) => {
               </p>
               <div className="flex flex-wrap mt-5 gap-6 lg:gap-6 items-center justify-center content-evenly">
                 {t?.stack?.map((ts, indx_b) => (
-                  <div className="pt-6 px-6 pb-5 bg-white shadow-darkShadow rounded-sm flex">
+                  <div
+                    key={indx_b}
+                    className="pt-6 px-6 pb-5 bg-white shadow-darkShadow rounded-sm flex"
+                  >
                     <i
-                      key={indx_b}
                       className={`${ts?.icon} scale-150 lg:scale-[2.5]`}
                       title={ts?.name}
                     />
