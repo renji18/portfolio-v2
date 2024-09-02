@@ -16,8 +16,8 @@ const Navbar = () => {
   }, [navOpen])
 
   const navLinks = [
-    { title: "Works", link: "works" },
     { title: "About", link: "about" },
+    { title: "Works", link: "works" },
     { title: "Blog", link: "blog" },
   ]
 
