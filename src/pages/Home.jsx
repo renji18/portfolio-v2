@@ -8,7 +8,7 @@ import About from "../components/About/About"
 
 const Home = ({ data }) => {
   return (
-    <div className="text-darkBlack">
+    <div id="home" className="text-darkBlack">
       <Navbar />
       <Hero
         logos={data && data?.company_logos}

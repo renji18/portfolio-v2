@@ -61,7 +61,13 @@ const Navbar = () => {
     >
       <div className="xl:w-[1170px]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div
+            className="cursor-pointer flex items-center gap-2"
+            onClick={() => {
+              const element = document.getElementById("home")
+              element.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
             <img src={logo} alt="" className="h-7 w-7 lg:h-9 lg:w-9" />
             {/* <p className="text-lightBlack tracking-widest font-medium text-[20px] font-serif">A</p> */}
             <p className="text-lightBlack tracking-widest font-medium text-[15px]">
