@@ -1,12 +1,32 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Navbar from "../components/Navbar/Navbar"
 import Hero from "../components/Hero/Hero"
 import Footer from "../components/Footer/Footer"
 import Projects from "../components/Works/Projects"
 import Tech from "../components/Tech/Tech"
 import About from "../components/About/About"
+import { useLocation } from "react-router-dom"
 
 const Home = ({ data }) => {
+  const location = useLocation()
+
+  useEffect(() => {
+    const family = location.pathname.split("/")[1]
+
+    if (!family) return
+
+    if (family === "lora") document.body.style.fontFamily = "Lora, sans-serif"
+    else if (family === "montserrat")
+      document.body.style.fontFamily = "Montserrat, sans-serif"
+    else if (family === "playfair-display")
+      document.body.style.fontFamily = "Playfair Display, sans-serif"
+    else document.body.style.fontFamily = "Inter, sans-serif"
+
+    return () => {
+      document.body.style.fontFamily = ""
+    }
+  }, [location])
+
   return (
     <div id="home" className="text-darkBlack">
       <Navbar />

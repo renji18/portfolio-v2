@@ -43,7 +43,6 @@ const Navbar = () => {
       window.removeEventListener("touchmove", disableScroll, { passive: false })
     }
 
-    // Cleanup function to reset event listeners when the component unmounts
     return () => {
       window.removeEventListener("scroll", disableScroll, { passive: false })
       window.removeEventListener("wheel", disableScroll, { passive: false })
