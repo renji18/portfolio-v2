@@ -10,7 +10,7 @@ const About = () => {
         Behind the Code
       </p> */}
 
-      <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-36 justify-between font-medium px-10 md:px-36 lg:px-20 xl:px-0 max-w-[1170px]">
+      <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-36 justify-between px-10 md:px-36 lg:px-20 xl:px-0 max-w-[1170px]">
         <p className="text-xl md:text-2xl text-center lg:text-start lg:px-0 lg:text-3xl lg:w-1/2 leading-[1.5] md:leading-[1.5] lg:leading-[1.5] text-lightBlack">
           Every line of code tells a story. Here&apos;s mine—
           <span className="font-[700]">shaped by passion</span> and a commitment
@@ -20,7 +20,7 @@ const About = () => {
           <p>
             Ever since I wrote my first line of code, I&apos;ve been captivated
             by the endless possibilities of technology. Currently pursuing my{" "}
-            <span className=" font-bold text-darkBlack">
+            <span className=" font-semibold text-darkBlack">
               B.Tech in Computer Science
             </span>
             , I&apos;ve transformed a simple curiosity into a passion for
@@ -29,18 +29,18 @@ const About = () => {
           <p>
             What drives me is the challenge of turning complex problems into
             simple, user-friendly solutions. Whether it&apos;s{" "}
-            <span className=" font-bold text-darkBlack">
+            <span className=" font-semibold text-darkBlack">
               designing intuitive interfaces
             </span>{" "}
             or{" "}
-            <span className=" font-bold text-darkBlack">
+            <span className=" font-semibold text-darkBlack">
               optimizing backend systems
             </span>{" "}
             , I focus on quality and user experience in every project.
           </p>
           <p>
             Looking ahead, I&apos;m excited to explore emerging trends like{" "}
-            <span className=" font-bold text-darkBlack">
+            <span className=" font-semibold text-darkBlack">
               AI and machine learning
             </span>
             , and to keep pushing the boundaries of what&apos;s possible in web
