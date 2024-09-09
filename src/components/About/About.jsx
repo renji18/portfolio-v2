@@ -4,6 +4,7 @@ const About = () => {
   return (
     <div
       id="about"
+      style={{ fontFamily: ["Lora", "sans-serif"] }}
       className="bg-lightWhite py-[100px] lg:py-[100px] flex flex-col items-center"
     >
       {/* <p className="text-[24px] md:text-[27.2px] lg:text-[32px] my-[12px] font-[700] text-center leading-[1.3] text-darkBlack">

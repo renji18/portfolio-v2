@@ -8,7 +8,7 @@ const Hero = ({ logos, email }) => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-evenly lg:justify-around pb-[70px] lg:py-[70px] xl:justify-evenly">
+      <div className="flex flex-col lg:flex-row items-center justify-evenly lg:justify-around pb-[70px] lg:py-[80px] xl:justify-evenly">
         <div className="mt-16 lg:mt-0 md:w-[500px] lg:w-[550px]">
           <p className="text-[32px] md:text-[40px] lg:text-[48px] text-center lg:text-start pt-6 lg:pt-0 mb-[16px] md:mb-[20px] font-[700] leading-[1.3] text-darkBlack">
             Innovating with code, delivering success
