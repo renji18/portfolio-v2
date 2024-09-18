@@ -18,7 +18,7 @@ const Blogs = ({ blogs }) => {
       })
       if (res) {
         console.log(res, "response")
-        setBlogData(null)
+        setBlogData({ title: "", content: "", tags: "" })
       }
     } catch (error) {
       console.log(error, "error uploading blog")
