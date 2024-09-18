@@ -6,7 +6,7 @@ import Skills from "../components/Admin/Skills"
 import Blogs from "../components/Admin/Blogs"
 
 const Admin = ({ data }) => {
-  const [authenticated, setAuthenticated] = useState(!false)
+  const [authenticated, setAuthenticated] = useState(false)
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
