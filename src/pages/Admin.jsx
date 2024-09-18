@@ -3,9 +3,10 @@ import CompanyLogos from "../components/Admin/CompanyLogos"
 import Projects from "../components/Admin/Projects"
 import { useNavigate } from "react-router-dom"
 import Skills from "../components/Admin/Skills"
+import Blogs from "../components/Admin/Blogs"
 
 const Admin = ({ data }) => {
-  const [authenticated, setAuthenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(!false)
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
@@ -28,6 +29,7 @@ const Admin = ({ data }) => {
         </div>
       ) : (
         <div className="flex flex-wrap gap-5 p-2">
+          <Blogs blogs={data && data?.blogs} />
           <CompanyLogos logos={data && data?.company_logos} />
           <Projects projects={data && data?.projects} />
           <Skills tech={data && data?.tech} />

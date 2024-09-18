@@ -67,54 +67,56 @@ const Skills = ({ tech }) => {
   }, [tech])
 
   return (
-    <div className="p-5 border-4 space-y-20 w-[26vw]">
-      {skills?.map((s, indx_a) => (
-        <div key={indx_a}>
-          <p className="text-xl">{s?.type}</p>
-          <div>
-            {s?.stack?.map((ss, indx_b) => (
-              <div
-                key={indx_b}
-                className="flex items-center gap-2 w-full justify-between"
-              >
-                <div className="mb-3 border-2 p-2 flex-1">
-                  <div className="flex items-center gap-5 mb-1">
-                    <i className={ss?.icon} />
+    <div className="py-5 border-4">
+      <div className="flex flex-wrap justify-evenly gap-10">
+        {skills?.map((s, indx_a) => (
+          <div key={indx_a}>
+            <p className="text-xl">{s?.type}</p>
+            <div>
+              {s?.stack?.map((ss, indx_b) => (
+                <div
+                  key={indx_b}
+                  className="flex items-center gap-2 w-full justify-between"
+                >
+                  <div className="mb-3 border-2 p-2 flex-1">
+                    <div className="flex items-center gap-5 mb-1">
+                      <i className={ss?.icon} />
+                      <input
+                        type="text"
+                        className="w-full border-2 p-1"
+                        placeholder="icon-name-here"
+                        value={ss?.name}
+                        onChange={(e) =>
+                          update(s?.type, indx_b, "name", e.target.value)
+                        }
+                      />
+                    </div>
                     <input
                       type="text"
-                      className="w-full border-2 p-1"
-                      placeholder="icon-name-here"
-                      value={ss?.name}
                       onChange={(e) =>
-                        update(s?.type, indx_b, "name", e.target.value)
+                        update(s?.type, indx_b, "icon", e.target.value)
                       }
+                      placeholder="icon-class-here"
+                      className="w-full border-2 p-1"
+                      value={ss?.icon}
                     />
                   </div>
-                  <input
-                    type="text"
-                    onChange={(e) =>
-                      update(s?.type, indx_b, "icon", e.target.value)
-                    }
-                    placeholder="icon-class-here"
-                    className="w-full border-2 p-1"
-                    value={ss?.icon}
+                  <IoIosRemoveCircle
+                    size={25}
+                    color="red"
+                    onClick={() => remove(s?.type, ss?.name)}
                   />
                 </div>
-                <IoIosRemoveCircle
-                  size={25}
-                  color="red"
-                  onClick={() => remove(s?.type, ss?.name)}
-                />
+              ))}
+              <div onClick={() => add(s?.type)} className="flex justify-center">
+                <IoMdAddCircleOutline size={30} color="blue" />
               </div>
-            ))}
-            <div onClick={() => add(s?.type)} className="flex justify-center">
-              <IoMdAddCircleOutline size={30} color="blue" />
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       <button
-        className="bg-myBlue px-3 py-2 rounded-lg font-medium text-lg text-lightWhite"
+        className="bg-myBlue mx-3 px-3 py-2 rounded-lg font-medium text-lg text-lightWhite"
         onClick={finalize}
       >
         Update

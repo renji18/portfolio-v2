@@ -97,10 +97,21 @@ export async function uploadProjectData(currentData, data) {
 }
 
 // uplaod tech stack
-
 export async function updateTechStack(data) {
   await updateDoc(portfolioRef, {
     tech: data
   })
   return "Project updated successfully"
+}
+
+// upload blog
+export async function uploadBlog(currentData, data) {
+  try {
+    await updateDoc(portfolioRef, {
+      blogs: [...currentData, { ...data }]
+    })
+    return "Blog updated successfully"
+  } catch (error) {
+    return errorHandler(error)
+  }
 }
