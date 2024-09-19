@@ -15,34 +15,40 @@ const Blogs = ({ blogs }) => {
         design, and tech innovations.
       </p>
 
-      <div className="pt-[80px] px-[15px] columns-1 lg:columns-2 xl:columns-3 gap-4">
+      <div className="pt-[80px] px-5 md:px-10 columns-1 lg:columns-2 xl:columns-3 gap-4">
         {blogs &&
-          blogs?.map((b, indx) => (
-            <div
-              key={indx}
-              className="break-inside-avoid shadow-boldShadow rounded-xl p-8"
-            >
-              <div className="flex items-center justify-between">
-                <p
-                  className="text-3xl font-semibold"
-                  style={{ fontFamily: ["Lora", "sans-serif"] }}
-                >
-                  {b?.title}
-                </p>
-                <p className="text-slate-500">({b?.date})</p>
+          blogs
+            ?.slice()
+            ?.reverse()
+            ?.map((b, indx) => (
+              <div
+                style={{ fontFamily: ["Lora", "sans-serif"] }}
+                key={indx}
+                className="break-inside-avoid shadow-boldShadow rounded-xl p-8"
+              >
+                <div className="flex flex-col justify-between">
+                  <p className="text-2xl md:text-3xl font-semibold">
+                    {b?.title}
+                  </p>
+                  <p className="text-slate-500">({b?.date})</p>
+                </div>
+                <div className="my-7 space-y-2">
+                  {b?.content?.split("#")?.map((bcs, idx) => (
+                    <p>{bcs}</p>
+                  ))}
+                </div>
+                <div className="flex items-center gap-3 flex-wrap">
+                  {b?.tags?.map((bt, indx) => (
+                    <div
+                      className="bg-lightBlack/70 font-semibold text-white px-2 py-1 rounded-full"
+                      key={indx}
+                    >
+                      #{bt}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="my-5 space-y-1.5">
-                {b?.content?.split("#")?.map((bcs, idx) => (
-                  <p>{bcs}</p>
-                ))}
-              </div>
-              <div className="flex items-center gap-3 flex-wrap">
-                {b?.tags?.map((bt, indx) => (
-                  <div className="bg-lightBlack/70 text-white px-2 py-1 rounded-full" key={indx}>#{bt}</div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
       </div>
     </div>
   )

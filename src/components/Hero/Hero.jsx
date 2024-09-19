@@ -3,7 +3,7 @@ import me from "../../assets/myself.png"
 import hoveredMe from "../../assets/hoveredMe.png"
 import { IoIosArrowRoundForward } from "react-icons/io"
 
-const Hero = ({ logos, email }) => {
+const Hero = ({ company_data, email }) => {
   const [hovering, setIsHovering] = useState(false)
 
   return (
@@ -53,11 +53,12 @@ const Hero = ({ logos, email }) => {
         </div>
       </div>
       <div className="flex items-center justify-center flex-wrap gap-8 md:gap-14 pb-[70px]">
-        {logos &&
-          logos?.map((l, indx) => (
+        {company_data &&
+          company_data?.map((cd, indx) => (
             <span className="" key={indx}>
               <img
-                src={l}
+                src={cd?.file}
+                title={`${cd?.name}\n${cd?.from} to ${cd?.to}`}
                 alt="company_logo"
                 className={`max-h-[40px] lg:max-h-[50px] object-contain grayscale ${
                   indx !== 0 ? "opacity-[0.6]" : ""

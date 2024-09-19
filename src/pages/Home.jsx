@@ -32,7 +32,7 @@ const Home = ({ data }) => {
     <div id="home" className="text-darkBlack">
       <Navbar />
       <Hero
-        logos={data && data?.company_logos}
+        company_data={data && data?.company_data}
         email={data && data?.socials?.email}
       />
       <About />

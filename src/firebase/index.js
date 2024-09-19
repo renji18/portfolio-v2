@@ -40,33 +40,14 @@ async function handleUploadImage(file, location) {
   }
 }
 
-// upload images
-async function uploadMultipleImages(files) {
-  try {
-    const urls = []
-
-    for (let i = 0; i < files?.length; i++) {
-      const url = await handleUploadImage(
-        files[i],
-        `company_logos/${Date?.now()}-${files[i]?.name}`
-      )
-      urls?.push(url)
-    }
-
-    return urls
-  } catch (error) {
-    return errorHandler(error)
-  }
-}
-
 // upload company logos
-export async function uploadCompanyLogos(currentUrls, files) {
+export async function uploadCompanyData(currentData, data) {
   try {
-    if (!files) return "No files provided"
+    if (!data?.file) return "No file provided"
 
-    const urls = await uploadMultipleImages(files)
+    const url = await handleUploadImage(data?.file, `company_logos/${Date?.now()}-${data?.file?.name}`)
     await updateDoc(portfolioRef, {
-      company_logos: [...currentUrls, ...urls],
+      company_data: [...currentData, { ...data, file: url }],
     })
     return "Company Logos updated successfully"
   } catch (error) {
