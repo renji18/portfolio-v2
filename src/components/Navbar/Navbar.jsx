@@ -18,7 +18,7 @@ const Navbar = () => {
   const navLinks = [
     { title: "About", link: "about" },
     { title: "Works", link: "works" },
-    { title: "Blog", link: "blog" },
+    { title: "Blog", link: "blogs" },
   ]
 
   const handleNavigate = (id) => {

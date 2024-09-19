@@ -6,6 +6,7 @@ import Projects from "../components/Works/Projects"
 import Tech from "../components/Tech/Tech"
 import About from "../components/About/About"
 import { useLocation } from "react-router-dom"
+import Blogs from "../components/Blogs/Blogs"
 
 const Home = ({ data }) => {
   const location = useLocation()
@@ -37,6 +38,7 @@ const Home = ({ data }) => {
       <About />
       <Tech tech={data && data?.tech} />
       <Projects projects={data && data?.projects} />
+      <Blogs blogs={data && data?.blogs} />
       <Footer socials={data && data?.socials} />
     </div>
   )
