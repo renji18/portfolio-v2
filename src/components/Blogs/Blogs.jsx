@@ -24,7 +24,7 @@ const Blogs = ({ blogs }) => {
               <div
                 style={{ fontFamily: ["Lora", "sans-serif"] }}
                 key={indx}
-                className="break-inside-avoid shadow-boldShadow rounded-xl p-8"
+                className="break-inside-avoid shadow-boldShadow rounded-xl p-8 mb-4"
               >
                 <div className="flex flex-col justify-between">
                   <p className="text-2xl md:text-3xl font-semibold">
