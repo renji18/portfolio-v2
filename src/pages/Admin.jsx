@@ -30,7 +30,7 @@ const Admin = ({ data }) => {
       ) : (
         <div className="flex flex-wrap gap-5 p-2">
           <Blogs blogs={data && data?.blogs} />
-          <Company companies={data && data?.companies} />
+          <Company company_data={data && data?.company_data} />
           <Projects projects={data && data?.projects} />
           <Skills tech={data && data?.tech} />
         </div>

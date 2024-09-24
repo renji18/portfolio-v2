@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { uploadCompanyData } from "../../firebase"
 
-const Company = ({ companies }) => {
+const Company = ({ company_data }) => {
   const [data, setData] = useState({})
 
   const handleUploadCompanyLogos = async () => {
     try {
-      const res = await uploadCompanyData(companies ? companies : [], data)
+      const res = await uploadCompanyData(company_data ? company_data : [], data)
       if (res) {
         console.log(res, "response")
         setData({ file: null, name: null, from: null, to: null })
