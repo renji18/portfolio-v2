@@ -6,10 +6,13 @@ const Company = ({ company_data }) => {
 
   const handleUploadCompanyLogos = async () => {
     try {
-      const res = await uploadCompanyData(company_data ? company_data : [], data)
+      const res = await uploadCompanyData(
+        company_data ? company_data : [],
+        data
+      )
       if (res) {
         console.log(res, "response")
-        setData({ file: null, name: null, from: null, to: null })
+        setData({ file: "", name: "", from: "", to: "" })
       }
     } catch (error) {
       console.log(error, "error uploading company logos")
