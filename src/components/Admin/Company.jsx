@@ -33,14 +33,14 @@ const Company = ({ company_data }) => {
       />
       <input
         type="text"
-        placeholder="from dd mmm, yyyy"
+        placeholder="from Month, year"
         className="border-2 p-2"
         value={data?.from}
         onChange={(e) => setData((prev) => ({ ...prev, from: e.target.value }))}
       />
       <input
         type="text"
-        placeholder="to dd mmm, yyyy"
+        placeholder="to Month, year"
         className="border-2 p-2"
         value={data?.to}
         onChange={(e) => setData((prev) => ({ ...prev, to: e.target.value }))}
