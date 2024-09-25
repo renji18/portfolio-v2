@@ -62,7 +62,7 @@ const Hero = ({ company_data, email }) => {
                 alt="company_logo"
                 className={`max-h-[40px] lg:max-h-[50px] object-contain grayscale ${
                   indx !== 0 ? "opacity-[0.6]" : ""
-                } hover:opacity-100 hover:grayscale-0 scale-110 transition-all duration-100 ease-linear`}
+                } hover:opacity-100 hover:grayscale-0 scale-110 transition-all duration-200 ease-linear`}
               />
             </span>
           ))}
