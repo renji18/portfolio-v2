@@ -52,7 +52,7 @@ const Hero = ({ company_data, email }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center flex-wrap gap-y-6 gap-x-10 pb-[70px] px-10 xl:px-60">
+      <div className="flex items-center justify-center flex-wrap gap-y-6 gap-x-8 md:gap-x-14 pb-[70px] px-10 xl:px-60">
         {company_data &&
           company_data?.map((cd, indx) => (
             <span className="" key={indx}>
