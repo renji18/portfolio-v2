@@ -41,12 +41,12 @@ const Projects = ({ projects }) => {
                   {p?.name}
                 </p>
                 <div className="text-center lg:text-start leading-[1.6] lg:leading-[1.5] xl:leading-[1.6] text-[14px] xl:text-[15px] text-lightBlack space-y-2 lg:space-y-1">
-                  {p?.desc?.split(",")?.map((pd, indx) => (
+                  {p?.desc?.split("#")?.map((pd, indx) => (
                     <p key={indx}>{pd}</p>
                   ))}
                 </div>
                 <div className="flex mt-4 lg:mt-6 gap-6 lg:gap-8 justify-center lg:justify-start">
-                  {p?.skills?.split("#")?.map((ps, indx) => (
+                  {p?.skills?.split(",")?.map((ps, indx) => (
                     <i
                       className={`${ps} scale-150 lg:scale-[1.8]`}
                       title={ps?.split("-")[1]}
