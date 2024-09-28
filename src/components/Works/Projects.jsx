@@ -46,7 +46,7 @@ const Projects = ({ projects }) => {
                   ))}
                 </div>
                 <div className="flex mt-4 lg:mt-6 gap-6 lg:gap-8 justify-center lg:justify-start">
-                  {p?.skills?.split(",")?.map((ps, indx) => (
+                  {p?.skills?.split("#")?.map((ps, indx) => (
                     <i
                       className={`${ps} scale-150 lg:scale-[1.8]`}
                       title={ps?.split("-")[1]}

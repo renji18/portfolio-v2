@@ -52,7 +52,7 @@ const Projects = ({ projects }) => {
       />
       <textarea
         type="text"
-        placeholder="website desc, in case of multiple, separate by comma without space"
+        placeholder="website desc, in case of multiple, separate by # without space"
         className="border"
         onChange={(e) => setData((prev) => ({ ...prev, desc: e.target.value }))}
         value={data?.desc}
