@@ -23,12 +23,6 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home data={portfolioData} />} />
-          <Route path="/lora" element={<Home data={portfolioData} />} />
-          <Route path="/montserrat" element={<Home data={portfolioData} />} />
-          <Route
-            path="/playfair-display"
-            element={<Home data={portfolioData} />}
-          />
           <Route path="/admin" element={<Admin data={portfolioData} />} />
         </Routes>
       </BrowserRouter>
