@@ -45,7 +45,10 @@ export async function uploadCompanyData(currentData, data) {
   try {
     if (!data?.file) return "No file provided"
 
-    const url = await handleUploadImage(data?.file, `company_logos/${Date?.now()}-${data?.file?.name}`)
+    const url = await handleUploadImage(
+      data?.file,
+      `company_logos/${Date?.now()}-${data?.file?.name}`
+    )
     await updateDoc(portfolioRef, {
       company_data: [...currentData, { ...data, file: url }],
     })
@@ -77,10 +80,22 @@ export async function uploadProjectData(currentData, data) {
   }
 }
 
+// upload projects order
+export async function updateProjectOrder(data) {
+  try {
+    await updateDoc(portfolioRef, {
+      projects: data,
+    })
+    return "Projects  updated successfully"
+  } catch (error) {
+    return errorHandler(error)
+  }
+}
+
 // uplaod tech stack
 export async function updateTechStack(data) {
   await updateDoc(portfolioRef, {
-    tech: data
+    tech: data,
   })
   return "Project updated successfully"
 }
@@ -89,7 +104,7 @@ export async function updateTechStack(data) {
 export async function uploadBlog(currentData, data) {
   try {
     await updateDoc(portfolioRef, {
-      blogs: [...currentData, { ...data }]
+      blogs: [...currentData, { ...data }],
     })
     return "Blog updated successfully"
   } catch (error) {

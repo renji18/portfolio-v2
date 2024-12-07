@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { IoIosRemoveCircle } from "react-icons/io"
 import { IoMdAddCircleOutline } from "react-icons/io"
 import { updateTechStack } from "../../firebase"
+import { toast } from "sonner"
 
 const Skills = ({ tech }) => {
   const [skills, setSkills] = useState([
@@ -12,6 +13,7 @@ const Skills = ({ tech }) => {
     { type: "Version Control & Collaboration", stack: [] },
     { type: "DevOps and Development Tools", stack: [] },
   ])
+  const [openCard, setOpenCard] = useState(false)
 
   const update = (firstObj, secondObj, key, value) => {
     setSkills((prev) =>
@@ -53,11 +55,9 @@ const Skills = ({ tech }) => {
   const finalize = async () => {
     try {
       const res = await updateTechStack(skills)
-      if (res) {
-        console.log(res, "response")
-      }
+      if (res) toast.success("Skills Updated Successfully")
     } catch (error) {
-      console.log(error, "error updating tech stack")
+      toast.error("Error Updating Tech Stack")
     }
   }
 
@@ -67,7 +67,17 @@ const Skills = ({ tech }) => {
   }, [tech])
 
   return (
-    <div className="py-5 border-4">
+    <div
+      onClick={() => {
+        if (openCard) return
+        setOpenCard(true)
+      }}
+      className={`pb-5 pt-1 border-4 ${
+        openCard ? "" : "h-10"
+      } transition-all duration-200 ease-linear overflow-hidden`}
+    >
+      <p className="px-5 pb-4">Update Skills</p>
+
       <div className="flex flex-wrap justify-evenly gap-10">
         {skills?.map((s, indx_a) => (
           <div key={indx_a}>

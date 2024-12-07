@@ -65,61 +65,63 @@ const Projects = ({ projects }) => {
                       Live Demo
                     </a>
                   </button>
-                  <div>
-                    {p?.repo?.split(",")?.length > 1 ? (
-                      <>
-                        {!showMultipleLinks ? (
-                          <button
-                            key={indx}
-                            onClick={() =>
-                              setShowMultipleLinks(!showMultipleLinks)
-                            }
-                            className={`flex items-center my-[10px] lg:my-0 justify-center text-darkBlack w-full md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5`}
+                  {p?.repo && (
+                    <div>
+                      {p?.repo?.split(",")?.length > 1 ? (
+                        <>
+                          {!showMultipleLinks ? (
+                            <button
+                              key={indx}
+                              onClick={() =>
+                                setShowMultipleLinks(!showMultipleLinks)
+                              }
+                              className={`flex items-center my-[10px] lg:my-0 justify-center text-darkBlack w-full md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5`}
+                            >
+                              <span>Visit Source Codes</span>
+                              <span>
+                                <IoIosArrowRoundForward size={25} />
+                              </span>
+                            </button>
+                          ) : (
+                            <div className="flex items-center gap-2">
+                              {p?.repo?.split(",")?.map((pr, indx) => (
+                                <a
+                                  key={indx}
+                                  href={pr}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="flex items-center my-[10px] lg:my-0 justify-center text-darkBlack w-[90%] md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5"
+                                >
+                                  <span>
+                                    {indx === 0 ? "Front End" : "Back End"}
+                                  </span>
+                                  <span>
+                                    <IoIosArrowRoundForward size={25} />
+                                  </span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <button
+                          className={`text-darkBlack w-full md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px]`}
+                        >
+                          <a
+                            href={p?.repo}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5"
                           >
-                            <span>Visit Source Codes</span>
+                            <span>Visit Source Code</span>
                             <span>
                               <IoIosArrowRoundForward size={25} />
                             </span>
-                          </button>
-                        ) : (
-                          <div className="flex items-center gap-2">
-                            {p?.repo?.split(",")?.map((pr, indx) => (
-                              <a
-                                key={indx}
-                                href={pr}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center my-[10px] lg:my-0 justify-center text-darkBlack w-[90%] md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5"
-                              >
-                                <span>
-                                  {indx === 0 ? "Front End" : "Back End"}
-                                </span>
-                                <span>
-                                  <IoIosArrowRoundForward size={25} />
-                                </span>
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <button
-                        className={`text-darkBlack w-full md:w-fit md:px-[20px] lg:px-[10px] rounded-[4px] py-[9px]`}
-                      >
-                        <a
-                          href={p?.repo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center justify-center gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5"
-                        >
-                          <span>Visit Source Code</span>
-                          <span>
-                            <IoIosArrowRoundForward size={25} />
-                          </span>
-                        </a>
-                      </button>
-                    )}
-                  </div>
+                          </a>
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { uploadBlog } from "../../firebase"
+import { toast } from "sonner"
 
 const Blogs = ({ blogs }) => {
   const [blogData, setBlogData] = useState()
+  const [openCard, setOpenCard] = useState(false)
 
   const returnDate = () => {
     const date = String(new Date()).split(" ")
@@ -17,16 +19,24 @@ const Blogs = ({ blogs }) => {
         date: returnDate(),
       })
       if (res) {
-        console.log(res, "response")
+        toast.success("Blog Uploaded Successfully")
         setBlogData({ title: "", content: "", tags: "" })
       }
     } catch (error) {
-      console.log(error, "error uploading blog")
+      toast.error("Error Uploading Blog")
     }
   }
 
   return (
-    <div className="px-5 border-4 w-[26vw]">
+    <div
+      className={`px-5 pt-1 flex-1 border-4 ${
+        openCard ? "" : "h-10"
+      } transition-all duration-200 ease-linear overflow-hidden`}
+      onClick={() => {
+        if (openCard) return
+        setOpenCard(true)
+      }}
+    >
       <p>Create Blog</p>
 
       <div className="flex flex-col my-5 gap-3">
@@ -53,13 +63,16 @@ const Blogs = ({ blogs }) => {
             setBlogData((prev) => ({ ...prev, tags: e.target.value }))
           }
           rows={4}
-          placeholder="Tags"
+          placeholder="Tags (seperated by spaces)"
           className="border-2 p-1"
         />
       </div>
 
-      <div className="flex justify-center">
-        <button onClick={handleUploadBlog} className="border-2 p-2">
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={handleUploadBlog}
+          className="border-2 px-3 py-2 rounded-lg font-medium text-lg text-lightWhite bg-myBlue"
+        >
           Upload Blog
         </button>
       </div>

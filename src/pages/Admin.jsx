@@ -4,6 +4,8 @@ import Projects from "../components/Admin/Projects"
 import { useNavigate } from "react-router-dom"
 import Skills from "../components/Admin/Skills"
 import Blogs from "../components/Admin/Blogs"
+import ReorderProjects from "../components/Admin/ReorderProjects"
+import { Toaster } from "sonner"
 
 const Admin = ({ data }) => {
   const [authenticated, setAuthenticated] = useState(false)
@@ -17,6 +19,7 @@ const Admin = ({ data }) => {
 
   return (
     <div>
+      <Toaster />
       {!authenticated ? (
         <div className="h-40 border-2 border-black">
           <input
@@ -28,11 +31,14 @@ const Admin = ({ data }) => {
           <button onClick={auth}>Authenticate</button>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-5 p-2">
-          <Blogs blogs={data && data?.blogs} />
-          <Company company_data={data && data?.company_data} />
-          <Projects projects={data && data?.projects} />
+        <div className="p-2">
+          <div className="flex gap-2 mb-2">
+            <Blogs blogs={data && data?.blogs} />
+            <Company company_data={data && data?.company_data} />
+            <Projects projects={data && data?.projects} />
+          </div>
           <Skills tech={data && data?.tech} />
+          <ReorderProjects projects={data && data?.projects} />
         </div>
       )}
     </div>

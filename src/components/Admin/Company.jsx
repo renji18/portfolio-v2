@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { uploadCompanyData } from "../../firebase"
+import { toast } from "sonner"
 
 const Company = ({ company_data }) => {
   const [data, setData] = useState({})
+  const [openCard, setOpenCard] = useState(false)
 
   const handleUploadCompanyLogos = async () => {
     try {
@@ -11,16 +13,26 @@ const Company = ({ company_data }) => {
         data
       )
       if (res) {
-        console.log(res, "response")
+        toast.success("Company Data Uploaded Successfully")
         setData({ file: "", name: "", from: "", to: "" })
       }
     } catch (error) {
-      console.log(error, "error uploading company logos")
+      toast.error("Error Uploading Company Data")
     }
   }
 
   return (
-    <div className="border-4 max-w-fit p-5 flex flex-col gap-8">
+    <div
+      onClick={() => {
+        if (openCard) return
+        setOpenCard(true)
+      }}
+      className={`border-4 flex-1 px-5 pt-1 flex flex-col gap-8 ${
+        openCard ? "" : "h-10"
+      } transition-all duration-200 ease-linear overflow-hidden`}
+    >
+      <p>Create Company Data</p>
+
       <input
         type="file"
         onChange={(e) =>
@@ -48,9 +60,14 @@ const Company = ({ company_data }) => {
         value={data?.to}
         onChange={(e) => setData((prev) => ({ ...prev, to: e.target.value }))}
       />
-      <button onClick={handleUploadCompanyLogos} className="border-2 p-2">
-        Submit
-      </button>
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={handleUploadCompanyLogos}
+          className="border-2 px-3 py-2 rounded-lg font-medium text-lg text-lightWhite bg-myBlue"
+        >
+          Submit
+        </button>
+      </div>
     </div>
   )
 }
