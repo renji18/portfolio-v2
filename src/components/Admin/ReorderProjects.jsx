@@ -76,7 +76,7 @@ const ReorderProjects = ({ projects }) => {
                 <div onClick={() => moveRight(index)}>{">"}</div>
               </div>
             </div>
-            <img src={d?.imageSmall} alt="" />
+            <img src={d?.imageSmall} alt={`${d?.name}'s cover`} />
           </div>
         ))}
       </div>

@@ -27,12 +27,12 @@ const Projects = ({ projects }) => {
               <div className="px-[10px] lg:px-0 lg:max-w-[500px] xl:max-w-[550px] flex justify-center items-center">
                 <img
                   src={p?.image}
-                  alt="cover_image"
+                  alt={`${p?.name} cover_image"`}
                   className="hidden xl:block object-contain rounded-[10px] shadow-boldShadow"
                 />
                 <img
                   src={p?.imageSmall}
-                  alt="cover_image"
+                  alt={`${p?.name} cover_image`}
                   className="xl:hidden object-contain rounded-[10px] shadow-boldShadow"
                 />
               </div>

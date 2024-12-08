@@ -42,12 +42,12 @@ const Hero = ({ company_data, email }) => {
                 hovering ? "opacity-0" : "opacity-100"
               } transition-all duration-300 ease-linear z-10`}
               src={me}
-              alt=""
+              alt="Aadarsh Jha"
             />
             <img
               className={`h-full w-full absolute shadow-darkShadow z-0`}
               src={hoveredMe}
-              alt=""
+              alt="Aadarsh Jha"
             />
           </div>
         </div>
@@ -59,7 +59,7 @@ const Hero = ({ company_data, email }) => {
               <img
                 src={cd?.file}
                 title={`${cd?.name}\n${cd?.from} to ${cd?.to}`}
-                alt="company_logo"
+                alt={cd?.name}
                 className={`max-h-[40px] lg:max-h-[50px] object-contain grayscale ${
                   indx !== 0 ? "opacity-[0.6]" : ""
                 } hover:opacity-100 hover:grayscale-0 scale-110 transition-all duration-200 ease-linear`}

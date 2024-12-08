@@ -67,7 +67,7 @@ const Navbar = () => {
               element.scrollIntoView({ behavior: "smooth" })
             }}
           >
-            <img src={logo} alt="" className="h-7 w-7 lg:h-9 lg:w-9" />
+            <img src={logo} alt="Aadarsh Jha" className="h-7 w-7 lg:h-9 lg:w-9" />
             {/* <p className="text-lightBlack tracking-widest font-medium text-[20px] font-serif">A</p> */}
             <p className="text-lightBlack tracking-widest font-medium text-[15px]">
               AADARSH JHA

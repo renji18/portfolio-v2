@@ -60,7 +60,7 @@ const Footer = ({ socials }) => {
       <div className="xl:flex justify-center text-lightWhite">
         <div className="xl:w-[1170px] py-[40px] lg:py-[30px] px-[15px] flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="" className="h-7 w-7 lg:h-9 lg:w-9" />
+            <img src={logo} alt="Aadarsh Jha" className="h-7 w-7 lg:h-9 lg:w-9" />
             <p className="md:translate-y-3 leading-[1.6] mb-[20px]">
               Developed by Aadarsh Jha
             </p>
