@@ -6,6 +6,7 @@ import { SlSocialLinkedin } from "react-icons/sl"
 import { FaGithub } from "react-icons/fa"
 import { CgFileDocument } from "react-icons/cg"
 import logo from "../../assets/logo.png"
+import { openCalendlyPopup } from "../../utils/calendly"
 
 const Footer = ({ socials }) => {
   const icons = [
@@ -39,7 +40,10 @@ const Footer = ({ socials }) => {
             project to new heights.
           </p>
           <div className="flex flex-col md:flex-row md:justify-center items-center mt-6 md:gap-5 text-[14px] leading-[1.2] font-[700]">
-            <button className="bg-lightWhite text-lightBlack w-full md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5">
+            <button
+              onClick={openCalendlyPopup}
+              className="bg-lightWhite text-lightBlack w-full md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5"
+            >
               Arrange a Call
             </button>
             <button className="flex items-center justify-center text-lightWhite my-[14px] w-full md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
@@ -60,7 +64,11 @@ const Footer = ({ socials }) => {
       <div className="xl:flex justify-center text-lightWhite">
         <div className="xl:w-[1170px] py-[40px] lg:py-[30px] px-[15px] flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Aadarsh Jha" className="h-7 w-7 lg:h-9 lg:w-9" />
+            <img
+              src={logo}
+              alt="Aadarsh Jha"
+              className="h-7 w-7 lg:h-9 lg:w-9"
+            />
             <p className="md:translate-y-3 leading-[1.6] mb-[20px]">
               Developed by Aadarsh Jha
             </p>

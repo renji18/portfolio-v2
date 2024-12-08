@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import me from "../../assets/myself.png"
 import hoveredMe from "../../assets/hoveredMe.png"
 import { IoIosArrowRoundForward } from "react-icons/io"
+import { openCalendlyPopup } from "../../utils/calendly"
 
 const Hero = ({ company_data, email }) => {
   const [hovering, setIsHovering] = useState(false)
@@ -18,7 +19,10 @@ const Hero = ({ company_data, email }) => {
             crafting top-notch projects.
           </p>
           <div className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-10 md:mt-6 md:gap-5 text-[14px] leading-[1.2] font-[700]">
-            <button className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5">
+            <button
+              onClick={openCalendlyPopup}
+              className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5"
+            >
               Arrange a Call
             </button>
             <button className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">

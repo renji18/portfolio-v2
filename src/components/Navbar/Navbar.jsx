@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { HiOutlineMenu } from "react-icons/hi"
 import { IoClose } from "react-icons/io5"
 import logo from "../../assets/logo.png"
+import { openCalendlyPopup } from "../../utils/calendly"
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -67,7 +68,11 @@ const Navbar = () => {
               element.scrollIntoView({ behavior: "smooth" })
             }}
           >
-            <img src={logo} alt="Aadarsh Jha" className="h-7 w-7 lg:h-9 lg:w-9" />
+            <img
+              src={logo}
+              alt="Aadarsh Jha"
+              className="h-7 w-7 lg:h-9 lg:w-9"
+            />
             {/* <p className="text-lightBlack tracking-widest font-medium text-[20px] font-serif">A</p> */}
             <p className="text-lightBlack tracking-widest font-medium text-[15px]">
               AADARSH JHA
@@ -98,7 +103,10 @@ const Navbar = () => {
                 </p>
               </div>
             ))}
-            <button className="px-[20px] py-[10px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5">
+            <button
+              onClick={openCalendlyPopup}
+              className="px-[20px] py-[10px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
+            >
               Arrange a Call
             </button>
           </div>
@@ -122,7 +130,10 @@ const Navbar = () => {
                 </p>
               </div>
             ))}
-            <button className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5">
+            <button
+              onClick={openCalendlyPopup}
+              className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
+            >
               Arrange a Call
             </button>
           </div>

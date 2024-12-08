@@ -34,7 +34,7 @@ const Blogs = ({ blogs }) => {
                 </div>
                 <div className="my-7 space-y-2">
                   {b?.content?.split("#")?.map((bcs, idx) => (
-                    <p>{bcs}</p>
+                    <p key={idx}>{bcs}</p>
                   ))}
                 </div>
                 <div className="flex items-center gap-3 flex-wrap">
