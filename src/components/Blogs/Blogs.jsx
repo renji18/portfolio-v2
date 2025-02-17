@@ -60,19 +60,21 @@ const Blogs = ({ blogs }) => {
         ))}
       </div>
 
-      <div className="px-5 md:px-10 w-full">
-        {visibleBlogs.length < blogs?.length && (
+      {visibleBlogs.length < blogs?.length && (
+        <div
+          className="px-5 md:px-10 w-full flex justify-center items-center h-60 -translate-y-40"
+          style={{
+            backdropFilter: "blur(12px)",
+          }}
+        >
           <div
             onClick={showMore}
-            className="w-full flex justify-center items-center h-40 -translate-y-20 bg-lightBlack/20 text-2xl font-semibold tracking-wide text-darkBlack"
-            style={{
-              backdropFilter: "blur(12px)",
-            }}
+            className="bg-lightBlack/15 text-2xl font-semibold tracking-wide px-4 py-2 rounded-md cursor-pointer text-darkBlack"
           >
             Load More Blogs ?
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
