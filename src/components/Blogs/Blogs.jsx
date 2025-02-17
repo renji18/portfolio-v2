@@ -7,13 +7,13 @@ const Blogs = ({ blogs }) => {
     if (visibleBlogs.length === blogs?.length) return
     setVisibleBlogs((prev) => [
       ...prev,
-      ...blogs?.slice(visibleBlogs?.length, visibleBlogs.length + 1),
+      ...blogs?.slice(visibleBlogs?.length, visibleBlogs.length + 6),
     ])
   }
 
   useEffect(() => {
     if (!blogs) return
-    setVisibleBlogs(blogs?.slice(0, 1))
+    setVisibleBlogs(blogs?.slice(0, 6))
   }, [blogs])
 
   return (
