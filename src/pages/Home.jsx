@@ -8,7 +8,6 @@ import About from "../components/About/About"
 import Blogs from "../components/Blogs/Blogs"
 
 const Home = ({ data }) => {
-
   return (
     <div id="home" className="text-darkBlack">
       <Navbar />
@@ -19,7 +18,7 @@ const Home = ({ data }) => {
       <About />
       <Tech tech={data && data?.tech} />
       <Projects projects={data && data?.projects} />
-      <Blogs blogs={data && data?.blogs} />
+      <Blogs blogs={data && data?.blogs?.slice()?.reverse()} />
       <Footer socials={data && data?.socials} />
     </div>
   )

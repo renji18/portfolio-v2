@@ -1,6 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const Blogs = ({ blogs }) => {
+  const [visibleBlogs, setVisibleBlogs] = useState([])
+
+  const showMore = () => {
+    if (visibleBlogs.length === blogs?.length) return
+    setVisibleBlogs((prev) => [
+      ...prev,
+      ...blogs?.slice(visibleBlogs?.length, visibleBlogs.length + 1),
+    ])
+  }
+
+  useEffect(() => {
+    if (!blogs) return
+    setVisibleBlogs(blogs?.slice(0, 1))
+  }, [blogs])
+
   return (
     <div
       id="blogs"
@@ -16,39 +31,47 @@ const Blogs = ({ blogs }) => {
       </p>
 
       <div className="pt-[80px] px-5 md:px-10 columns-1 lg:columns-2 xl:columns-3 gap-4">
-        {blogs &&
-          blogs
-            ?.slice()
-            ?.reverse()
-            ?.map((b, indx) => (
-              <div
-                style={{ fontFamily: ["Lora", "sans-serif"] }}
-                key={indx}
-                className="break-inside-avoid shadow-boldShadow rounded-xl p-8 mb-4"
-              >
-                <div className="flex flex-col justify-between">
-                  <p className="text-2xl md:text-3xl font-semibold">
-                    {b?.title}
-                  </p>
-                  <p className="text-slate-500">({b?.date})</p>
+        {visibleBlogs?.map((b, indx) => (
+          <div
+            style={{ fontFamily: ["Lora", "sans-serif"] }}
+            key={indx}
+            className="break-inside-avoid shadow-boldShadow rounded-xl p-8 mb-4"
+          >
+            <div className="flex flex-col justify-between">
+              <p className="text-2xl md:text-3xl font-semibold">{b?.title}</p>
+              <p className="text-slate-500">({b?.date})</p>
+            </div>
+            <div className="my-7 space-y-2">
+              {b?.content?.split("#")?.map((bcs, idx) => (
+                <p key={idx}>{bcs}</p>
+              ))}
+            </div>
+            <div className="flex items-center gap-3 flex-wrap">
+              {b?.tags?.map((bt, indx) => (
+                <div
+                  className="bg-lightBlack/70 font-semibold text-white px-2 py-1 rounded-full"
+                  key={indx}
+                >
+                  #{bt}
                 </div>
-                <div className="my-7 space-y-2">
-                  {b?.content?.split("#")?.map((bcs, idx) => (
-                    <p key={idx}>{bcs}</p>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 flex-wrap">
-                  {b?.tags?.map((bt, indx) => (
-                    <div
-                      className="bg-lightBlack/70 font-semibold text-white px-2 py-1 rounded-full"
-                      key={indx}
-                    >
-                      #{bt}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="px-5 md:px-10 w-full">
+        {visibleBlogs.length < blogs?.length && (
+          <div
+            onClick={showMore}
+            className="w-full flex justify-center items-center h-40 -translate-y-20 bg-lightBlack/20 text-2xl font-semibold tracking-wide text-darkBlack"
+            style={{
+              backdropFilter: "blur(12px)",
+            }}
+          >
+            Load More Blogs ?
+          </div>
+        )}
       </div>
     </div>
   )

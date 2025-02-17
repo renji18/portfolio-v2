@@ -29,11 +29,13 @@ const Projects = ({ projects }) => {
                   src={p?.image}
                   alt={`${p?.name} cover_image"`}
                   className="hidden xl:block object-contain rounded-[10px] shadow-boldShadow"
+                  loading="eager"
                 />
                 <img
                   src={p?.imageSmall}
                   alt={`${p?.name} cover_image`}
                   className="xl:hidden object-contain rounded-[10px] shadow-boldShadow"
+                  loading="eager"
                 />
               </div>
               <div className="lg:max-w-[400px]">

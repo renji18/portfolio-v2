@@ -47,11 +47,13 @@ const Hero = ({ company_data, email }) => {
               } transition-all duration-300 ease-linear z-10`}
               src={me}
               alt="Aadarsh Jha"
+              loading="eager"
             />
             <img
               className={`h-full w-full absolute shadow-darkShadow z-0`}
               src={hoveredMe}
               alt="Aadarsh Jha"
+              loading="lazy"
             />
           </div>
         </div>
@@ -61,6 +63,7 @@ const Hero = ({ company_data, email }) => {
           company_data?.map((cd, indx) => (
             <span className="" key={indx}>
               <img
+                loading="eager"
                 src={cd?.file}
                 title={`${cd?.name}\n${cd?.from} to ${cd?.to}`}
                 alt={cd?.name}

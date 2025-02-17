@@ -63,7 +63,7 @@ const Blogs = ({ blogs }) => {
             setBlogData((prev) => ({ ...prev, tags: e.target.value }))
           }
           rows={4}
-          placeholder="Tags (seperated by spaces)"
+          placeholder="Tags (seperated by spaces and no #)"
           className="border-2 p-1"
         />
       </div>
