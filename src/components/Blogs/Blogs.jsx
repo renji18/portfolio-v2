@@ -8,7 +8,7 @@ const Blogs = ({blogs}) => {
     if (visibleBlogs.length === blogs?.length) return
     setVisibleBlogs((prev) => [
       ...prev,
-      ...blogs?.slice(visibleBlogs?.length, visibleBlogs.length + 3),
+      ...blogs?.slice(visibleBlogs?.length, visibleBlogs.length + 6),
     ])
   }
 
