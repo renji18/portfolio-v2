@@ -32,28 +32,28 @@ const Blogs = ({blogs}) => {
         design, and tech innovations.
       </p>
 
-      <div className="pt-[80px] px-5 md:px-10">
+      <div className="pt-[60px] px-5 md:px-10">
         {/*columns-1 lg:columns-2 xl:columns-3 gap-4*/}
-        <Masonry columns={3} gap={4}>
+        <Masonry columns={{xs: 1, sm: 2, md: 3}} spacing={1.5}>
           {visibleBlogs?.map((b, indx) => (
             <div
-              style={{fontFamily: ["Lora", "sans-serif"]}}
+              style={{fontFamily: "Lora"}}
               key={indx}
-              className="break-inside-avoid shadow-boldShadow rounded-xl p-8 mb-4"
+              className="shadow-boldShadow rounded-xl p-8 mb-4"
             >
               <div className="flex flex-col justify-between">
-                <p className="text-2xl md:text-3xl font-semibold">{b?.title}</p>
-                <p className="text-slate-500">({b?.date})</p>
+                <p className="text-xl lg:text-2xl xl:text-3xl font-semibold">{b?.title}</p>
+                <p className="text-slate-500 text-sm xl:text-base">({b?.date})</p>
               </div>
-              <div className="my-7 space-y-2">
+              <div className="my-5 space-y-1 xl:space-y-2">
                 {b?.content?.split("#")?.map((bcs, idx) => (
-                  <p key={idx}>{bcs}</p>
+                  <p key={idx} className="text-sm lg:text-base">{bcs}</p>
                 ))}
               </div>
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-1.5 xl:gap-2 flex-wrap">
                 {b?.tags?.map((bt, indx) => (
                   <div
-                    className="bg-lightBlack/70 font-semibold text-white px-2 py-1 rounded-full"
+                    className="bg-lightBlack/70 text-sm font-medium text-white px-2 py-1 rounded-full"
                     key={indx}
                   >
                     #{bt}
@@ -67,7 +67,7 @@ const Blogs = ({blogs}) => {
 
       {visibleBlogs.length < blogs?.length && (
         <div
-          className="w-full flex justify-center items-center"
+          className="w-full flex justify-center items-center mt-5"
         >
           <div
             onClick={showMore}
