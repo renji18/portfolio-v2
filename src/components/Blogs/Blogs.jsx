@@ -33,8 +33,7 @@ const Blogs = ({blogs}) => {
       </p>
 
       <div className="pt-[60px] px-5 md:px-10">
-        {/*columns-1 lg:columns-2 xl:columns-3 gap-4*/}
-        <Masonry columns={{xs: 1, sm: 2, md: 3}} spacing={1.5}>
+        <Masonry columns={{xs: 1, sm: 2, md: 3}} spacing={1.5} sequential>
           {visibleBlogs?.map((b, indx) => (
             <div
               style={{fontFamily: "Lora"}}
