@@ -1,6 +1,7 @@
 import React from "react"
+import {MyTooltip} from "../../utils/MyTooltips";
 
-const Tech = ({ tech }) => {
+const Tech = ({tech}) => {
   return (
     <div
       id="tech"
@@ -29,10 +30,11 @@ const Tech = ({ tech }) => {
                     key={indx_b}
                     className="pt-6 px-6 pb-5 bg-white shadow-darkShadow rounded-sm flex"
                   >
-                    <i
-                      className={`${ts?.icon} scale-150 lg:scale-[2.5]`}
-                      title={ts?.name}
-                    />
+                    <MyTooltip title={ts?.name}>
+                      <i
+                        className={`${ts?.icon} scale-150 lg:scale-[2.5]`}
+                      />
+                    </MyTooltip>
                   </div>
                 ))}
               </div>

@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import { IoIosArrowRoundForward } from "react-icons/io"
+import React, {useState} from "react"
+import {IoIosArrowRoundForward} from "react-icons/io"
+import {MyTooltip} from "../../utils/MyTooltips";
 
-const Projects = ({ projects }) => {
+const Projects = ({projects}) => {
   const [showMultipleLinks, setShowMultipleLinks] = useState(false)
 
   return (
@@ -9,7 +10,8 @@ const Projects = ({ projects }) => {
       id="works"
       className="bg-lightWhite py-[100px] lg:py-[80px] lg:pb-[150px] flex flex-col items-center"
     >
-      <p className="text-[24px] md:text-[27.2px] lg:text-[32px] my-[12px] font-[700] text-center leading-[1.3] text-darkBlack">
+      <p
+        className="text-[24px] md:text-[27.2px] lg:text-[32px] my-[12px] font-[700] text-center leading-[1.3] text-darkBlack">
         Featured Work
       </p>
       <p className="text-[16px] text-center md:w-[480px] leading-[1.7] text-lightBlack px-[15px]">
@@ -39,25 +41,32 @@ const Projects = ({ projects }) => {
                 />
               </div>
               <div className="lg:max-w-[400px]">
-                <p className="text-center lg:text-start mt-[40px] lg:mt-0 mb-[15px] lg:mb-[10px] xl:mb-[15px] text-darkBlack text-[20px] md:text-[23.2px] lg:text-[26px] xl:text-[29px] font-[700] leading-[1.3] lg:leading-[1.2] xl:leading-[1.3]">
+                <p
+                  className="text-center lg:text-start mt-[40px] lg:mt-0 mb-[15px] lg:mb-[10px] xl:mb-[15px] text-darkBlack text-[20px] md:text-[23.2px] lg:text-[26px] xl:text-[29px] font-[700] leading-[1.3] lg:leading-[1.2] xl:leading-[1.3]">
                   {p?.name}
                 </p>
-                <div className="text-center lg:text-start leading-[1.6] lg:leading-[1.5] xl:leading-[1.6] text-[14px] xl:text-[15px] text-lightBlack space-y-2 lg:space-y-1">
+                <div
+                  className="text-center lg:text-start leading-[1.6] lg:leading-[1.5] xl:leading-[1.6] text-[14px] xl:text-[15px] text-lightBlack space-y-2 lg:space-y-1">
                   {p?.desc?.split("#")?.map((pd, indx) => (
                     <p key={indx}>{pd}</p>
                   ))}
                 </div>
                 <div className="flex mt-4 lg:mt-6 gap-6 lg:gap-8 justify-center lg:justify-start">
                   {p?.skills?.split(",")?.map((ps, indx) => (
-                    <i
-                      className={`${ps} scale-150 lg:scale-[1.8]`}
+                    <MyTooltip
                       title={ps?.split("-")[1]}
                       key={indx}
-                    />
+                    >
+                      <i
+                        className={`${ps} scale-150 lg:scale-[1.8]`}
+                      />
+                    </MyTooltip>
                   ))}
                 </div>
-                <div className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-5 lg:mt-7 md:gap-5 lg:gap-7 xl:gap-9 text-[14px] leading-[1.2] font-[700]">
-                  <button className="bg-darkBlack shadow-darkShadow text-white w-[90%] md:w-fit rounded-[4px] myTransition hover:-translate-y-0.5">
+                <div
+                  className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-5 lg:mt-7 md:gap-5 lg:gap-7 xl:gap-9 text-[14px] leading-[1.2] font-[700]">
+                  <button
+                    className="bg-darkBlack shadow-darkShadow text-white w-[90%] md:w-fit rounded-[4px] myTransition hover:-translate-y-0.5">
                     <a
                       href={p?.link}
                       target="_blank"
@@ -81,7 +90,7 @@ const Projects = ({ projects }) => {
                             >
                               <span>Visit Source Codes</span>
                               <span>
-                                <IoIosArrowRoundForward size={25} />
+                                <IoIosArrowRoundForward size={25}/>
                               </span>
                             </button>
                           ) : (
@@ -98,7 +107,7 @@ const Projects = ({ projects }) => {
                                     {indx === 0 ? "Front End" : "Back End"}
                                   </span>
                                   <span>
-                                    <IoIosArrowRoundForward size={25} />
+                                    <IoIosArrowRoundForward size={25}/>
                                   </span>
                                 </a>
                               ))}
@@ -117,7 +126,7 @@ const Projects = ({ projects }) => {
                           >
                             <span>Visit Source Code</span>
                             <span>
-                              <IoIosArrowRoundForward size={25} />
+                              <IoIosArrowRoundForward size={25}/>
                             </span>
                           </a>
                         </button>
