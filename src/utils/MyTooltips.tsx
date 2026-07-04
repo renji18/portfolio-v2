@@ -35,10 +35,12 @@ export const HtmlTooltip = styled(
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: "#303030",
     color: "#f6f6f6",
-    maxWidth: 220,
+    minWidth: 200,
+    maxWidth: 260,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid #f6f6f6",
     boxShadow: theme.shadows[1],
+    padding: "10px",
   },
 }));
 

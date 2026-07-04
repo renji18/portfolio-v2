@@ -1,5 +1,5 @@
-import { MySelector } from "../../redux/store";
-import { MyTooltip } from "../../utils/MyTooltips";
+
+import { MyTooltip } from "../utils/MyTooltips";
 
 const Tech = () => {
   const { portfolio } = MySelector((state) => state.portfolio);
