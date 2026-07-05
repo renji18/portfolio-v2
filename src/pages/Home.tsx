@@ -5,16 +5,11 @@ import CaseStudies from "../components/CaseStudies";
 import { useEffect } from "react";
 import Experience from "../components/Experience";
 import EngineeringStories from "../components/EngineeringStories";
+import resetScroll from "../utils/resetScroll";
 
 const Home = () => {
-  // use effect to get reset scroll
+  // use effect to reset scroll
   useEffect(() => {
-    function resetScroll() {
-      window.scrollTo(0, 0);
-      document.documentElement.style.scrollBehavior = "smooth";
-      const scrollableContainer = document.querySelector("#home");
-      if (scrollableContainer) scrollableContainer.scrollTop = 0;
-    }
     resetScroll();
   }, []);
 

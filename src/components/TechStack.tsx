@@ -15,7 +15,7 @@ const TechStack = () => {
         automotive, fintech, education, healthcare analytics, community
         management, and public-safety domains.
       </p>
-      <div className="pt-[80px] px-[15px] columns-1 lg:columns-2 xl:columns-3 gap-4">
+      <div className="pt-[80px] px-4 columns-1 md:columns-2 xl:columns-3 gap-4">
         {tech.map((t, indx_a) => (
           <div
             key={indx_a}

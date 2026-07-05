@@ -90,20 +90,12 @@ export const tech = [
         icon: "devicon-python-plain colored",
         name: "Python",
       },
-      {
-        icon: "devicon-cplusplus-plain colored",
-        name: "C++",
-      },
     ],
   },
 
   {
     type: "Infrastructure & Tools",
     stack: [
-      {
-        icon: "devicon-amazonwebservices-plain-wordmark colored",
-        name: "AWS",
-      },
       {
         icon: "devicon-docker-plain colored",
         name: "Docker",
@@ -121,12 +113,12 @@ export const tech = [
         name: "GitHub",
       },
       {
-        icon: "devicon-postman-plain colored",
-        name: "Postman",
+        icon: "devicon-amazonwebservices-plain-wordmark colored",
+        name: "AWS",
       },
       {
-        icon: "devicon-vscode-plain colored",
-        name: "VS Code",
+        icon: "devicon-postman-plain colored",
+        name: "Postman",
       },
     ],
   },

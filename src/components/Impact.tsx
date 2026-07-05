@@ -15,21 +15,25 @@ const Impact = () => {
         products, leading teams, and solving complex engineering challenges.
       </p>
 
-      <div className="pt-[80px] grid grid-cols-4 px-20 gap-4">
+      <div className="pt-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-14 lg:px-10 gap-4">
         {impact.map((c) => (
           <div
             key={c.title}
-            className="bg-lightBlack rounded-3xl p-4 shadow-darkShadow border border-white/5 transition-all duration-300 hover:-translate-y-1"
+            className="bg-darkBlack rounded-3xl p-4 shadow-darkShadow border border-white/5 transition-all duration-300 hover:-translate-y-1"
           >
-            <p className="text-5xl font-bold text-myBlue">{c.title}</p>
+            <p className="text-4xl xl:text-5xl font-bold text-myBlue">
+              {c.title}
+            </p>
 
-            <p className="mt-3 text-xl font-semibold text-lightWhite">
+            <p className="mt-2 xl:mt-3 text-lg xl:text-xl font-semibold text-lightWhite">
               {c.subtitle}
             </p>
 
-            <div className="w-16 h-[3px] bg-myBlue rounded-full my-4" />
+            <div className="w-16 h-[3px] bg-myBlue rounded-full my-3 xl:my-4" />
 
-            <p className="text-gray-400 leading-relaxed">{c.desc}</p>
+            <p className="text-gray-400 leading-relaxed text-sm xl:text-base">
+              {c.desc}
+            </p>
           </div>
         ))}
       </div>

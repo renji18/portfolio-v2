@@ -21,11 +21,15 @@ const Navbar = () => {
     }
   };
 
+  const goBack =
+    location.pathname.includes("case-study") ||
+    location.pathname.includes("engineering-story");
+
   const navLinks = [
     {
       title: "Case Studies",
       onClick: () => {
-        if (location.pathname.includes("case-study")) {
+        if (goBack) {
           navigate("/");
         }
 
@@ -36,18 +40,17 @@ const Navbar = () => {
     {
       title: "Engineering Stories",
       onClick: () => {
-        if (location.pathname.includes("case-study")) {
+        if (goBack) {
           navigate("/");
         }
-        handleNavigate("engineering-story");
+        handleNavigate("engineering-stories");
         setNavOpen(false);
       },
     },
     {
       title: "View Resume",
-      onClick: () => {
-        setNavOpen(false);
-      },
+      link: "https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing",
+      anchor: true,
     },
   ];
 
@@ -120,21 +123,32 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center font-[700] text-[14px] gap-12">
             {navLinks?.map((nl) => (
               <div key={nl?.title}>
-                <p
-                  className="myTransition hover:-translate-y-0.5 cursor-pointer"
-                  onClick={nl.onClick}
-                >
-                  {nl?.title}
-                </p>
+                {nl.anchor ? (
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={nl.link}
+                    className="myTransition hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    {nl.title}
+                  </a>
+                ) : (
+                  <p
+                    className="myTransition hover:-translate-y-0.5 cursor-pointer"
+                    onClick={nl.onClick}
+                  >
+                    {nl?.title}
+                  </p>
+                )}
               </div>
             ))}
 
-            <button
-              // onClick={openCalendlyPopup}
+            <a
+              href="mailto:aadarshjha1401@gmail.com"
               className="px-[20px] py-[10px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
             >
-              Contact
-            </button>
+              Email Me
+            </a>
           </div>
         </div>
         {navOpen && (
@@ -145,17 +159,32 @@ const Navbar = () => {
           >
             {navLinks?.map((nl) => (
               <div key={nl.title}>
-                <p
-                  className="myTransition hover:-translate-y-0.5"
-                  onClick={nl.onClick}
-                >
-                  {nl.title}
-                </p>
+                {nl.anchor ? (
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={nl.link}
+                    className="myTransition hover:-translate-y-0.5"
+                  >
+                    {nl.title}
+                  </a>
+                ) : (
+                  <p
+                    className="myTransition hover:-translate-y-0.5"
+                    onClick={nl.onClick}
+                  >
+                    {nl.title}
+                  </p>
+                )}
               </div>
             ))}
-            <button className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5">
-              Contact
-            </button>
+
+            <a
+              href="mailto:aadarshjha1401@gmail.com"
+              className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
+            >
+              Email Me
+            </a>
           </div>
         )}
       </div>

@@ -7,107 +7,62 @@ const Footer = () => {
   const icons = [
     {
       title: "LinkedIn",
-      link: "YOUR_LINKEDIN",
+      link: "https://www.linkedin.com/in/aadarshJha1401/",
       icon: <SlSocialLinkedin size={22} />,
     },
     {
       title: "GitHub",
-      link: "YOUR_GITHUB",
+      link: "https://github.com/renji18",
       icon: <FaGithub size={22} />,
     },
     {
       title: "Email",
-      link: "mailto:YOUR_EMAIL",
+      link: "mailto:aadarshjha1401@gmail.com",
       icon: <HiOutlineMail size={24} />,
     },
     {
       title: "Resume",
-      link: "/resume.pdf",
+      link: "https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing",
       icon: <CgFileDocument size={22} />,
     },
   ];
 
   return (
     <footer className="bg-lightBlack border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto px-6 py-20">
+      <div className="max-w-[1200px] mx-auto px-6 py-14 lg:py-20">
         <div className="flex flex-col items-center text-center">
-          <p
-            className="
-              text-myBlue
-              uppercase
-              tracking-[4px]
-              text-sm
-              font-semibold
-            "
-          >
+          <p className="text-myBlue uppercase tracking-[4px] text-sm font-semibold">
             Let's Connect
           </p>
 
-          <h2
-            className="
-              text-lightWhite
-              text-4xl
-              md:text-5xl
-              font-bold
-              mt-4
-              leading-tight
-              max-w-[800px]
-            "
-          >
+          <h2 className="text-lightWhite text-2xl md:text-4xl lg:text-5xl font-bold mt-4 lg:leading-tight max-w-[800px]">
             Backend Engineer. Product Builder. Technical Lead.
           </h2>
 
-          <p
-            className="
-              text-lightWhite/70
-              max-w-[700px]
-              mt-6
-              text-lg
-              leading-relaxed
-            "
-          >
+          <p className="text-lightWhite/70 max-w-[700px] mt-6 lg:text-lg leading-relaxed">
             Currently working as a Technical Lead building SaaS products across
             automotive, lending, community management, and enterprise platforms.
           </p>
 
-          <div className="flex gap-4 mt-10">
+          <div className="flex gap-4 mt-7 md:mt-10">
             <a
-              href="mailto:YOUR_EMAIL"
-              className="
-                bg-myBlue
-                text-darkBlack
-                px-6
-                py-3
-                rounded-xl
-                font-semibold
-                hover:-translate-y-1
-                transition-all
-              "
+              href="mailto:aadarshjha1401@gmail.com"
+              className="bg-myBlue text-darkBlack px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold hover:-translate-y-1 transition-all"
             >
               Email Me
             </a>
 
             <a
-              href="YOUR_LINKEDIN"
+              href="https://www.linkedin.com/in/aadarshJha1401/"
               target="_blank"
               rel="noreferrer"
-              className="
-                border
-                border-white/10
-                px-6
-                py-3
-                rounded-xl
-                text-lightWhite
-                font-semibold
-                hover:border-myBlue
-                transition-all
-              "
+              className="border border-white/10 px-4 md:px-6 py-2 md:py-3 rounded-xl text-lightWhite font-semibold hover:border-myBlue transition-all"
             >
               LinkedIn
             </a>
           </div>
 
-          <div className="flex gap-6 mt-12">
+          <div className="flex gap-6 mt-9 md:mt-12">
             {icons.map((item) => (
               <a
                 key={item.title}
@@ -115,26 +70,14 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 title={item.title}
-                className="
-                  text-lightWhite/70
-                  hover:text-myBlue
-                  hover:-translate-y-1
-                  transition-all
-                "
+                className="text-lightWhite/70 hover:text-myBlue hover:-translate-y-1 transition-all"
               >
                 {item.icon}
               </a>
             ))}
           </div>
 
-          <div
-            className="
-              w-full
-              h-px
-              bg-white/10
-              my-12
-            "
-          />
+          <div className="w-full h-px bg-white/10 my-10 md:my-12" />
 
           <p className="text-lightWhite/40 text-sm">
             © {new Date().getFullYear()} Aadarsh Jha · Backend Engineer ·
