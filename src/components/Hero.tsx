@@ -47,7 +47,15 @@ const Hero = () => {
               View Resume
             </a>
 
-            <div className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
+            <div
+              className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5 cursor-pointer"
+              onClick={() => {
+                const element = document.getElementById("case-study");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               <p>View Case Studies</p>
               <span>
                 <IoIosArrowRoundForward size={25} />
