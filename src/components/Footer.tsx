@@ -7,56 +7,143 @@ import { CgFileDocument } from "react-icons/cg";
 const Footer = () => {
   const icons = [
     {
-      // link: socials?.linkedin,
       title: "LinkedIn",
-      icon: <SlSocialLinkedin size={23} />,
+      link: "YOUR_LINKEDIN",
+      icon: <SlSocialLinkedin size={22} />,
     },
     {
-      // link: socials?.github,
-      title: "Github",
-      icon: <FaGithub size={23} />,
+      title: "GitHub",
+      link: "YOUR_GITHUB",
+      icon: <FaGithub size={22} />,
     },
     {
-      // link: `mailto:${socials?.email}`,
       title: "Email",
-      icon: <HiOutlineMail size={26} />,
+      link: "mailto:YOUR_EMAIL",
+      icon: <HiOutlineMail size={24} />,
     },
     {
-      // link: socials?.resume,
       title: "Resume",
-      icon: <CgFileDocument size={24} />,
+      link: "/resume.pdf",
+      icon: <CgFileDocument size={22} />,
     },
   ];
 
   return (
-    <div className="xl:flex justify-center bg-lightBlack text-lightWhite border-t-[0.5px] border-t-lightWhite">
-      <div className="xl:w-[1170px] py-[40px] lg:py-[30px] px-[15px] flex flex-col md:flex-row items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img
-            src="/assets/logo.png"
-            alt="Aadarsh Jha"
-            className="h-7 w-7 lg:h-9 lg:w-9"
-          />
-          <p className="md:translate-y-3 leading-[1.6] mb-[20px]">
-            Developed by Aadarsh Jha
+    <footer className="bg-lightBlack border-t border-white/10">
+      <div className="max-w-[1200px] mx-auto px-6 py-20">
+        <div className="flex flex-col items-center text-center">
+          <p
+            className="
+              text-myBlue
+              uppercase
+              tracking-[4px]
+              text-sm
+              font-semibold
+            "
+          >
+            Let's Connect
           </p>
-        </div>
-        <div className="flex items-center gap-4">
-          {icons?.map((i, idx) => (
+
+          <h2
+            className="
+              text-lightWhite
+              text-4xl
+              md:text-5xl
+              font-bold
+              mt-4
+              leading-tight
+              max-w-[800px]
+            "
+          >
+            Backend Engineer. Product Builder. Technical Lead.
+          </h2>
+
+          <p
+            className="
+              text-lightWhite/70
+              max-w-[700px]
+              mt-6
+              text-lg
+              leading-relaxed
+            "
+          >
+            Currently working as a Technical Lead building SaaS products across
+            automotive, lending, community management, and enterprise platforms.
+          </p>
+
+          <div className="flex gap-4 mt-10">
             <a
-              key={idx}
+              href="mailto:YOUR_EMAIL"
+              className="
+                bg-myBlue
+                text-darkBlack
+                px-6
+                py-3
+                rounded-xl
+                font-semibold
+                hover:-translate-y-1
+                transition-all
+              "
+            >
+              Email Me
+            </a>
+
+            <a
+              href="YOUR_LINKEDIN"
               target="_blank"
               rel="noreferrer"
-              // href={i?.link || "#"}
-              title={i?.title}
-              className="myTransition hover:-translate-y-0.5"
+              className="
+                border
+                border-white/10
+                px-6
+                py-3
+                rounded-xl
+                text-lightWhite
+                font-semibold
+                hover:border-myBlue
+                transition-all
+              "
             >
-              {i?.icon}
+              LinkedIn
             </a>
-          ))}
+          </div>
+
+          <div className="flex gap-6 mt-12">
+            {icons.map((item) => (
+              <a
+                key={item.title}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                title={item.title}
+                className="
+                  text-lightWhite/70
+                  hover:text-myBlue
+                  hover:-translate-y-1
+                  transition-all
+                "
+              >
+                {item.icon}
+              </a>
+            ))}
+          </div>
+
+          <div
+            className="
+              w-full
+              h-px
+              bg-white/10
+              my-12
+            "
+          />
+
+          <p className="text-lightWhite/40 text-sm">
+            © {new Date().getFullYear()} Aadarsh Jha · Backend Engineer ·
+            Technical Lead
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

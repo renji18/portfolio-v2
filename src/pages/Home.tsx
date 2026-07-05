@@ -1,8 +1,10 @@
 import Hero from "../components/Hero";
 import Impact from "../components/Impact";
-import Tech from "../components/TechStack";
+import TechStack from "../components/TechStack";
 import CaseStudies from "../components/CaseStudies";
 import { useEffect } from "react";
+import Experience from "../components/Experience";
+import EngineeringStories from "../components/EngineeringStories";
 
 const Home = () => {
   // use effect to get reset scroll
@@ -21,9 +23,9 @@ const Home = () => {
       <Hero />
       <Impact />
       <CaseStudies />
-      {/*Experience*/}
-      {/*<Tech />*/}
-      {/*Engineering Stories*/}
+      <Experience />
+      <TechStack />
+      <EngineeringStories />
     </div>
   );
 };
