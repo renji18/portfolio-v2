@@ -1,4 +1,3 @@
-import { IoIosArrowRoundForward } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { FaGithub } from "react-icons/fa";
