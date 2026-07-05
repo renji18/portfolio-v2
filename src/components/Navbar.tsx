@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-import logo from "../../assets/logo.png";
-import { openCalendlyPopup } from "../../utils/calendly";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [navOpen, setNavOpen] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -20,9 +22,33 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { title: "About", link: "about" },
-    { title: "Works", link: "works" },
-    { title: "Blog", link: "blogs" },
+    {
+      title: "Case Studies",
+      onClick: () => {
+        if (location.pathname.includes("case-study")) {
+          navigate("/");
+        }
+
+        handleNavigate("case-study");
+        setNavOpen(false);
+      },
+    },
+    {
+      title: "Engineering Stories",
+      onClick: () => {
+        if (location.pathname.includes("case-study")) {
+          navigate("/");
+        }
+        handleNavigate("engineering-story");
+        setNavOpen(false);
+      },
+    },
+    {
+      title: "View Resume",
+      onClick: () => {
+        setNavOpen(false);
+      },
+    },
   ];
 
   const handleNavigate = (id: string) => {
@@ -69,7 +95,7 @@ const Navbar = () => {
             }}
           >
             <img
-              src={logo}
+              src="/assets/logo.png"
               alt="Aadarsh Jha"
               className="h-7 w-7 lg:h-9 lg:w-9"
             />
@@ -93,20 +119,21 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-center font-[700] text-[14px] gap-12">
             {navLinks?.map((nl) => (
-              <div key={nl?.link}>
+              <div key={nl?.title}>
                 <p
                   className="myTransition hover:-translate-y-0.5 cursor-pointer"
-                  onClick={() => handleNavigate(nl?.link)}
+                  onClick={nl.onClick}
                 >
                   {nl?.title}
                 </p>
               </div>
             ))}
+
             <button
-              onClick={openCalendlyPopup}
+              // onClick={openCalendlyPopup}
               className="px-[20px] py-[10px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
             >
-              Arrange a Call
+              Contact
             </button>
           </div>
         </div>
@@ -117,23 +144,17 @@ const Navbar = () => {
             }`}
           >
             {navLinks?.map((nl) => (
-              <div key={nl?.link}>
+              <div key={nl.title}>
                 <p
                   className="myTransition hover:-translate-y-0.5"
-                  onClick={() => {
-                    handleNavigate(nl?.link);
-                    setNavOpen(false);
-                  }}
+                  onClick={nl.onClick}
                 >
-                  {nl?.title}
+                  {nl.title}
                 </p>
               </div>
             ))}
-            <button
-              onClick={openCalendlyPopup}
-              className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5"
-            >
-              Arrange a Call
+            <button className="px-[20px] py-[12px] rounded-[4px] border-2 border-darkBlack shadow-darkShadow max-w-fit myTransition hover:-translate-y-0.5">
+              Contact
             </button>
           </div>
         )}
