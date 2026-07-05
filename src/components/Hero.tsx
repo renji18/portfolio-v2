@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col lg:flex-row items-center justify-evenly lg:justify-around pb-[70px] lg:py-[80px] xl:justify-evenly">
-        <div className="mt-16 lg:mt-0 md:w-[500px] lg:w-[550px]">
+        <div className="mt-16 lg:mt-0 md:w-[600px] lg:w-[550px]">
           <p className="text-[32px] md:text-[40px] lg:text-[48px] text-center lg:text-start pt-6 lg:pt-0 mb-[16px] md:mb-[20px] font-[700] leading-[1.3] text-darkBlack">
             Backend Engineer & Technical Lead
           </p>
@@ -38,9 +38,15 @@ const Hero = () => {
             public-sector platforms.
           </p>
           <div className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-10 md:mt-6 md:gap-5 text-[14px] leading-[1.2] font-[700]">
-            <button className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5">
+            <a
+              href="https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5 text-center"
+            >
               View Resume
-            </button>
+            </a>
+
             <div className="flex items-center justify-center text-darkBlack my-[14px] w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[9px] gap-0 hover:gap-1 transition-all duration-100 ease-in myTransition hover:-translate-y-0.5">
               <p>View Case Studies</p>
               <span>
@@ -74,7 +80,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center flex-wrap gap-y-6 gap-x-8 md:gap-x-14 pb-[70px] px-10 xl:px-60">
+      <div className="flex items-center justify-center flex-wrap gap-y-6 gap-x-8 md:gap-x-14 pb-[70px] px-10 md:px-20 xl:px-60">
         {company_data.map((cd, index) => (
           <HtmlTooltip
             placement={getPlacement(index)}
@@ -91,7 +97,7 @@ const Hero = () => {
               loading="eager"
               src={cd?.file}
               alt={cd?.name}
-              className={`max-h-[40px] lg:max-h-[50px] w-[200px] object-contain grayscale ${
+              className={`max-h-[25px] md:max-h-[35px] lg:max-h-[45px] max-w-[200px] lg:w-[200px] object-contain grayscale ${
                 index !== 0 ? "opacity-[0.6]" : ""
               } hover:opacity-100 hover:grayscale-0 scale-110 transition-all duration-200 ease-linear`}
             />

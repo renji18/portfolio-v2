@@ -37,7 +37,7 @@ export const caseStudy = [
   {
     name: "Edge Autosoft",
     category: "Automotive ERP Platform",
-    image: "/assets/projects/autosoft.png",
+    image: "/assets/case_study/autosoft.png",
     slug: "edge-autosoft",
     tagline:
       "A unified automotive ERP platform built to streamline repair operations, inventory management, invoicing, reporting, and customer workflows.",
@@ -53,7 +53,7 @@ export const caseStudy = [
         label: "Database Entities",
       },
       {
-        value: "100s",
+        value: "100+",
         label: "API Operations",
       },
       {
@@ -123,7 +123,7 @@ export const caseStudy = [
   {
     name: "Muno",
     category: "Community Management Platform",
-    image: "/assets/projects/muno.png",
+    image: "/assets/case_study/muno.png",
     slug: "muno",
 
     tagline:
@@ -218,7 +218,7 @@ export const caseStudy = [
   {
     name: "Capital Lending",
     category: "FinTech Lending Platform",
-    image: "/assets/projects/capital-lending.png",
+    image: "/assets/case_study/capital-lending.png",
     slug: "capital-lending",
 
     tagline:
@@ -310,11 +310,10 @@ export const caseStudy = [
       "AWS",
     ],
   },
-
   {
     name: "Secure Scan",
     category: "Public Safety & Computer Vision Platform",
-    image: "/assets/projects/secure-scan.png",
+    image: "/assets/case_study/secure-scan.png",
     slug: "secure-scan",
 
     tagline:
@@ -333,7 +332,7 @@ export const caseStudy = [
         label: "Recognition Engine",
       },
       {
-        value: "Government",
+        value: "Govt.",
         label: "Deployment",
       },
       {

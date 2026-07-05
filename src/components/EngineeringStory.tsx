@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { story } from "../data/stories";
+import { useEffect } from "react";
+import resetScroll from "../utils/resetScroll";
 
 const SectionCard = ({
   title,
@@ -9,16 +11,10 @@ const SectionCard = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section
-      className="
-        bg-lightBlack
-        border border-white/5
-        rounded-[24px]
-        p-8
-        shadow-darkShadow
-      "
-    >
-      <h2 className="text-2xl font-bold text-lightWhite mb-6">{title}</h2>
+    <section className="bg-lightBlack rounded-[24px] p-6 lg:p-8 border border-white/5 shadow-darkShadow hover:shadow-boldShadow hover:border-myBlue/20 hover:-translate-y-1 transition-all duration-300">
+      <h2 className="text-xl lg:text-2xl font-bold text-lightWhite mb-4 lg:mb-6">
+        {title}
+      </h2>
 
       {children}
     </section>
@@ -27,18 +23,10 @@ const SectionCard = ({
 
 const BulletList = ({ items }: { items: string[] }) => {
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-3 lg:space-y-4">
       {items.map((item) => (
-        <li
-          key={item}
-          className="
-            flex
-            gap-4
-            text-gray-400
-            leading-relaxed
-          "
-        >
-          <span className="text-myBlue mt-1">●</span>
+        <li key={item} className="flex gap-4 text-gray-400 leading-relaxed items-center text-sm lg:text-base">
+          <span className="text-myBlue">●</span>
           <span>{item}</span>
         </li>
       ))}
@@ -49,81 +37,41 @@ const BulletList = ({ items }: { items: string[] }) => {
 const EngineeringStory = () => {
   const location = useLocation();
 
-  const s = story.find(
-    (c) => c.slug === location.pathname.split("/")[2],
-  );
+  const s = story.find((c) => c.slug === location.pathname.split("/")[2]);
 
-  if (!s) {
-    return (
-      <div className="bg-darkBlack min-h-screen flex justify-center items-center text-lightWhite">
-        Story not found
-      </div>
-    );
-  }
+  // use effect to reset scroll
+  useEffect(() => {
+    resetScroll();
+  }, [s]);
+
+  if (!s) return null;
 
   return (
     <div className="bg-darkBlack min-h-screen text-lightWhite">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
         {/* Hero */}
-
-        <section className="mb-20">
-          <p
-            className="
-              text-myBlue
-              uppercase
-              tracking-[0.2em]
-              text-sm
-              font-semibold
-            "
-          >
+        <section className="pt-20 lg:pt-32 pb-16 lg:pb-24">
+          <p className="text-myBlue uppercase tracking-[0.2em] text-xs lg:text-sm font-semibold">
             {s.category}
           </p>
 
-          <h1
-            className="
-              text-4xl
-              lg:text-6xl
-              font-bold
-              mt-4
-              leading-tight
-            "
-          >
+          <h1 className="text-4xl lg:text-7xl font-bold mt-4 leading-tight">
             {s.title}
           </h1>
 
-          <p
-            className="
-              text-gray-400
-              text-lg
-              mt-6
-              max-w-4xl
-              leading-relaxed
-            "
-          >
+          <p className="text-gray-400 text-base lg:text-xl mt-6 lg:mt-8 max-w-4xl leading-relaxed">
             {s.tagline}
           </p>
 
-          <div
-            className="
-              mt-8
-              inline-flex
-              px-4
-              py-2
-              rounded-full
-              border
-              border-myBlue/20
-              text-myBlue
-            "
-          >
+          <div className="mt-6 lg:mt-8 text-sm lg:text-base inline-flex px-4 py-2 rounded-full border border-myBlue/20 text-myBlue">
             {s.readTime}
           </div>
         </section>
 
         {/* Problem */}
-
         <div className="space-y-8">
           <SectionCard title="The Problem">
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-sm lg:text-base">
               {s.problem}
             </p>
           </SectionCard>
