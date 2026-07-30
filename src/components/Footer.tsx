@@ -2,17 +2,18 @@ import { HiOutlineMail } from "react-icons/hi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { FaGithub } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
+import { GITHUB, LINKEDIN, RESUME } from "../data/links";
 
 const Footer = () => {
   const icons = [
     {
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/aadarshJha1401/",
+      link: LINKEDIN,
       icon: <SlSocialLinkedin size={22} />,
     },
     {
       title: "GitHub",
-      link: "https://github.com/renji18",
+      link: GITHUB,
       icon: <FaGithub size={22} />,
     },
     {
@@ -22,7 +23,7 @@ const Footer = () => {
     },
     {
       title: "Resume",
-      link: "https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing",
+      link: RESUME,
       icon: <CgFileDocument size={22} />,
     },
   ];
@@ -53,7 +54,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/aadarshJha1401/"
+              href={LINKEDIN}
               target="_blank"
               rel="noreferrer"
               className="border border-white/10 px-4 md:px-6 py-2 md:py-3 rounded-xl text-lightWhite font-semibold hover:border-myBlue transition-all"
