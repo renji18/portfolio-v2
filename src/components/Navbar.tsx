@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
+import { RESUME } from "../data/links";
 
 const Navbar = () => {
   const location = useLocation();
@@ -49,7 +50,7 @@ const Navbar = () => {
     },
     {
       title: "View Resume",
-      link: "https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing",
+      link: RESUME,
       anchor: true,
     },
   ];

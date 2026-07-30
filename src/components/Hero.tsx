@@ -4,6 +4,7 @@ import hoveredMe from "../assets/hoveredMe.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { HtmlTooltip } from "../utils/MyTooltips";
 import { company_data } from "../data/companyData";
+import { RESUME } from "../data/links";
 
 const getPlacement = (placement: number) => {
   switch (placement) {
@@ -39,7 +40,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col md:flex-row md:justify-center items-center lg:justify-start mt-10 md:mt-6 md:gap-5 text-[14px] leading-[1.2] font-[700]">
             <a
-              href="https://drive.google.com/file/d/1nKHcxGffKF9lw1f6pfsmIQaZB2Dq8qB-/view?usp=sharing"
+              href={RESUME}
               target="_blank"
               rel="noreferrer"
               className="bg-darkBlack shadow-darkShadow text-white w-[91%] md:w-fit md:px-[20px] rounded-[4px] py-[14px] myTransition hover:-translate-y-0.5 text-center"
